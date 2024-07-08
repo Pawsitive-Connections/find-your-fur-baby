@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="./assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
 
     <title>Find Your Fur Baby Home Page</title>
 </head>
@@ -19,40 +19,81 @@
         </div>
         <p id="fun-fact"></p>
     </section>
-    <section class="quiz">
-        <div id="q1" class="question">
-            <p>Question</p>
-            <div class="range"></div>
-            <button>next</button>
-        </div>
-        <div id="q2" class="question">
-            <p>Question</p>
-            <div class="range"></div>
-            <button>previous</button>
-            <button>next</button>
-        </div>
-        <div id="q3" class="question">
-            <p>Question</p>
-            <div class="range"></div>
-            <button>previous</button>
-            <button>next</button>
-        </div>
-        <div id="q4" class="question">
-            <p>Question</p>
-            <div class="range"></div>
-            <button>previous</button>
-            <button>next</button>
-        </div>
-        <div id="q5" class="question">
-            <p>Question</p>
-            <div class="range"></div>
-            <button>previous</button>
-            <button>Find my fur baby!</button>
-        </div>
+    <!-- <div class="container"> -->
+        <section class="quiz">
+            <div id="q1" class="question card-panel">
+                <p>Would you like a dog that is good with children?</p>
+                <form class="range">
+                    <p>
+                        <label>
+                            <input name="1" type="radio" class="radio" checked />
+                            <span>1</span>
+                        </label>
+                    </p>
+                   
+                   <p>
+                        <label>
+                            <input name="2" type="radio" class="radio"  />
+                            <span>2</span>
+                        </label>
+                     </p>
+                    <p>
+                        <label>
+                            <input name="3" type="radio" class="radio"  />
+                            <span>3</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="4" type="radio" class="radio"  />
+                            <span>4</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="5" type="radio" class="radio"  />
+                            <span>5</span>
+                        </label>
+                    </p>
+              
+                </form>
+                <div class="answers">
+                <p class="low">I don't care about kids</p>
+                <p class="high">They must be amazing with kids!</p>
+                </div>
+                <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Next
+                    <span class="material-icons">pets</span>
+                </button>
+            </div>
+            <div id="q2" class="question hide">
+                <p>Question</p>
+                <div class="range"></div>
+                <button>previous</button>
+                <a class="waves-effect waves-light btn">next</a>
+            </div>
+            <div id="q3" class="question hide">
+                <p>Question</p>
+                <div class="range"></div>
+                <button>previous</button>
+                <button>next</button>
+            </div>
+            <div id="q4" class="question hide">
+                <p>Question</p>
+                <div class="range"></div>
+                <button>previous</button>
+                <button>next</button>
+            </div>
+            <div id="q5" class="question hide">
+                <p>Question</p>
+                <div class="range"></div>
+                <button>previous</button>
+                <button>Find my fur baby!</button>
+            </div>
+            
+        </section>
+    </div>
     
-    </section>
-
-
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
