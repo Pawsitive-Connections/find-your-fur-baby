@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(() => {
     const questions = $('.question');
 
@@ -27,3 +28,22 @@ $(document).ready(() => {
 
     showQuestion(0);
 });
+=======
+const button = document.getElementsByClassName('quizBtn')
+console.log(button)
+
+quizBtnArray = [];
+
+quizBtnArray.push(button)
+console.log(quizBtnArray)
+
+for (const btn of quizBtnArray[0]) {
+   btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (btn) {
+        btn.setAttribute('style', 'background-color: #bab0a4;')
+        }
+        
+    })
+}
+>>>>>>> 72d0fd4be5a179dba687e7ab2f812bebaf39ce5a
