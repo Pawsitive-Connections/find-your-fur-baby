@@ -1,4 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    background-color: #bab0a4;
+}
 .description {
+background-color: #bab0a4;
 float: right;
 flex: 1;
 margin-right: 200px;
@@ -7,8 +16,14 @@ justify-content: space-between;
 }
 
 header {
+    background-color: 	#ecd3d3;
+    height: 100px;
+}
+
+h1 {
     text-align: center;
-    font-size: 26px;
+    font-size: 35px;
+    padding-top: 25px;
 }
 
 .dogPhoto {
