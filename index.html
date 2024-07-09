@@ -6,7 +6,7 @@
     <link href="./assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Find Your Fur Baby Home Page</title>
 </head>
 <body>
@@ -15,79 +15,51 @@
     </header>
 
     <section class="dog-photo fun-fact">
-        <div id="img">
-        </div>
+        <div id="img"></div>
         <p id="fun-fact"></p>
     </section>
     <!-- <div class="container"> -->
-        <section class="quiz">
+        <section class="quiz row">
             <div id="q1" class="question card-panel">
                 <p>Would you like a dog that is good with children?</p>
-                <form class="range">
-                    <p>
-                        <label>
-                            <input name="1" type="radio" class="radio" checked />
-                            <span>1</span>
-                        </label>
-                    </p>
-                   
-                   <p>
-                        <label>
-                            <input name="2" type="radio" class="radio"  />
-                            <span>2</span>
-                        </label>
-                     </p>
-                    <p>
-                        <label>
-                            <input name="3" type="radio" class="radio"  />
-                            <span>3</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="4" type="radio" class="radio"  />
-                            <span>4</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="5" type="radio" class="radio"  />
-                            <span>5</span>
-                        </label>
-                    </p>
-              
-                </form>
-                <div class="answers">
-                <p class="low">I don't care about kids</p>
-                <p class="high">They must be amazing with kids!</p>
+                <div class="quiz-btns col l12 center ">
+                    <div class="btn quizBtn 1" id="q1b1"></div>
+                    <div class="btn quizBtn 2" id="q1b2"></div>
+                    <div class="btn quizBtn 3" id="q1b3"></div>
+                    <div class="btn quizBtn 4" id="q1b4"></div>
+                    <div class="btn quizBtn 5" id="q1b5"></div>
                 </div>
-                <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Next
+                <div class="answers">
+                    <p class="low">I don't care about kids</p>
+                    <p class="high">They must be amazing with kids!</p>
+                </div>
+                <button id="q1-next" class="btn waves-effect waves-light btn-small" type="button" name="action">Next
                     <span class="material-icons">pets</span>
                 </button>
             </div>
-            <div id="q2" class="question hide">
-                <p>Question</p>
+            <div id="q2" class="question card-panel hide">
+                <p>Question 2</p>
                 <div class="range"></div>
-                <button>previous</button>
-                <a class="waves-effect waves-light btn">next</a>
+                <button id="q2-prev" class="btn waves-effect waves-light btn-small" type="button">Previous</button>
+                <button id="q2-next" class="btn waves-effect waves-light btn-small" type="button">Next</button>
             </div>
-            <div id="q3" class="question hide">
-                <p>Question</p>
+            <div id="q3" class="question card-panel hide">
+                <p>Question 3</p>
                 <div class="range"></div>
-                <button>previous</button>
-                <button>next</button>
+                <button id="q3-prev" class="btn waves-effect waves-light btn-small" type="button">Previous</button>
+                <button id="q3-next" class="btn waves-effect waves-light btn-small" type="button">Next</button>
             </div>
-            <div id="q4" class="question hide">
-                <p>Question</p>
+            <div id="q4" class="question card-panel hide">
+                <p>Question 4</p>
                 <div class="range"></div>
-                <button>previous</button>
-                <button>next</button>
+                <button id="q4-prev" class="btn waves-effect waves-light btn-small" type="button">Previous</button>
+                <button id="q4-next" class="btn waves-effect waves-light btn-small" type="button">Next</button>
             </div>
-            <div id="q5" class="question hide">
-                <p>Question</p>
+            <div id="q5" class="question card-panel hide">
+                <p>Question 5</p>
                 <div class="range"></div>
-                <button>previous</button>
-                <button>Find my fur baby!</button>
+                <button id="q5-prev" class="btn waves-effect waves-light btn-small" type="button">Previous</button>
+                <button id="q5-next" class="btn waves-effect waves-light btn-small" type="button">Next</button>
             </div>
             
         </section>

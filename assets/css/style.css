@@ -8,6 +8,7 @@ header {
 .quiz {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 .question {
     width: 50%;
@@ -26,26 +27,17 @@ header {
     margin-bottom: 40px;
 }
 
-.btn {
+ #submit {
    width: 25%;
    position: relative;
    left: 75%;
+   background-color: #dbddec;
+   color: black;
+   border: 4px solid #bab0a4;
+
 }
 
-/* .radio {
-   width: 3em;
-   height: 100px;
-   transform: scale(2);
-} */
 
-form {
-    display: flex;
-    justify-content: space-around;
-}
-span {
-    transform: scale(2);
-    
-}
 
 .answers {
     display: flex;
@@ -62,6 +54,23 @@ span {
     position: relative;
     left: 50%;
 }
+
+
+.quiz-btns .btn {
+    background-color: #dbddec;
+    margin: 30px;
+    border: 4px solid #bab0a4;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.quiz-btns .btn:hover {
+    background-color: #bab0a4	;
+}
+
+
+
 
 
 
