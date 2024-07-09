@@ -20,48 +20,21 @@
         <p id="fun-fact"></p>
     </section>
     <!-- <div class="container"> -->
-        <section class="quiz">
+        <section class="quiz row">
             <div id="q1" class="question card-panel">
                 <p>Would you like a dog that is good with children?</p>
-                <form class="range">
-                    <p>
-                        <label>
-                            <input name="1" type="radio" class="radio" checked />
-                            <span>1</span>
-                        </label>
-                    </p>
-                   
-                   <p>
-                        <label>
-                            <input name="2" type="radio" class="radio"  />
-                            <span>2</span>
-                        </label>
-                     </p>
-                    <p>
-                        <label>
-                            <input name="3" type="radio" class="radio"  />
-                            <span>3</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="4" type="radio" class="radio"  />
-                            <span>4</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input name="5" type="radio" class="radio"  />
-                            <span>5</span>
-                        </label>
-                    </p>
-              
-                </form>
+                <div class="quiz-btns col l12 center ">
+                    <div class="btn quizBtn 1" id="q1b1"></div>
+                    <div class="btn quizBtn 2" id="q1b2"></div>
+                    <div class="btn quizBtn 3" id="q1b3"></div>
+                    <div class="btn quizBtn 4" id="q1b4"></div>
+                    <div class="btn quizBtn 5" id="q1b5"></div>
+                </div>
                 <div class="answers">
                 <p class="low">I don't care about kids</p>
                 <p class="high">They must be amazing with kids!</p>
                 </div>
-                <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Next
+                <button class="btn waves-effect waves-light btn-small" id="submit" type="submit" name="action">Next
                     <span class="material-icons">pets</span>
                 </button>
             </div>
