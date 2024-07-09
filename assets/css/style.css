@@ -27,13 +27,41 @@ header {
     margin-bottom: 40px;
 }
 
- #submit {
-   width: 25%;
-   position: relative;
-   left: 75%;
+.next-prev {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz .next {
+   width: 50%;
+   left: 100%;
    background-color: #dbddec;
    color: black;
    border: 4px solid #bab0a4;
+   font-size: 17px;
+   padding-bottom: 35px;
+
+}
+
+#q1-next {
+    width: 75%;
+    position: relative;
+    left: 250%;
+    background-color: #dbddec;
+    color: black;
+    border: 4px solid #bab0a4;
+    font-size: 17px;
+    padding-bottom: 35px;
+}
+
+.quiz .prev {
+    width: 75%;
+    right: 100%;
+    background-color: #dbddec;
+    color: black;
+    border: 4px solid #bab0a4;
+    font-size: 17px;
+    padding-bottom: 35px;
 
 }
 
