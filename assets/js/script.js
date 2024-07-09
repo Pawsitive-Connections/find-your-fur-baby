@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(() => {
     const questions = $('.question');
 
@@ -28,7 +27,6 @@ $(document).ready(() => {
 
     showQuestion(0);
 });
-=======
 const button = document.getElementsByClassName('quizBtn')
 console.log(button)
 
@@ -46,4 +44,3 @@ for (const btn of quizBtnArray[0]) {
         
     })
 }
->>>>>>> 72d0fd4be5a179dba687e7ab2f812bebaf39ce5a
