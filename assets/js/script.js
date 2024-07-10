@@ -10,8 +10,8 @@ $(document).ready(() => {
     }
 
     questions.each(function (index) {
-        const nextBtn = $(this).find(`#q${index + 1}-next`);
-        const prevBtn = $(this).find(`#q${index + 1}-prev`)
+        const nextBtn = $(this).find(`.next`);
+        const prevBtn = $(this).find(`.prev`)
 
         nextBtn.on('click', () => {
             if (index < questions.length - 1) {
