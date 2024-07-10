@@ -4,7 +4,6 @@ $(document).ready(() => {
 
     const showQuestion = (currentQuestion) => {
         questions.each(function (index) {
-            console.log(index)
             $(this).toggleClass('hide', currentQuestion !== index);
         });
     }
