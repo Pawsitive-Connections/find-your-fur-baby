@@ -43,31 +43,48 @@ $(document).ready(() => {
     
 });
 
-function getBreeds(answers) {
-    const apiKey = `0RPs3+YvKx3lcRmxrMI8tQ==K6WaN0Jvv5ptwUKa`;
-    const url = `https://api.api-ninjas.com/v1/dogs`;
-    console.log(apiKey);
-    console.log(url);
+// function getBreeds(answers) {
+//     const apiKey = `0RPs3+YvKx3lcRmxrMI8tQ==K6WaN0Jvv5ptwUKa`;
+//     const url = `https://api.api-ninjas.com/v1/dogs`;
+//     console.log(apiKey);
+//     console.log(url);
 
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'X-Api-Key': apiKey
-        }
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error('Response not found.')
-        } 
-        return response.json();
-    })
-    .then(data => {
-        const breeds = findBreeds(data, answers);
-        console.log(breeds);
-    })
-    .catch(error => {
-        console.error(error);
-    }); 
-};
+//     fetch(url, {
+//         method: 'GET',
+//         headers: {
+//             'X-Api-Key': apiKey
+//         }
+//     }).then(response => {
+//         if (!response.ok) {
+//             throw new Error('Response not found.')
+//         } 
+//         return response.json();
+//     })
+//     .then(data => {
+//         const breeds = findBreeds(data, answers);
+//         console.log(breeds);
+//     })
+//     .catch(error => {
+//         console.error(error);
+//     }); 
+// };
+
+function getBreeds (answers) {
+    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
+    const dog = 'beagle'
+    const url = `https://api.api-ninjas.com/v1/dogs?&X-API-Key=${apiKey}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const breeds = findBreeds(data, answers)
+        })
+
+        .catch(error => {
+            console.error('Error fetching data:', error)
+        })
+    
+}
 
 
 function findBreeds(breeds, answers) {
