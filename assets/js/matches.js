@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC';
     const url = `https://api.api-ninjas.com/v1/dogs?name=beagle&X-Api-Key=${apiKey}`;
@@ -46,4 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => {
         console.error('Error fetching data:', error);
     });
+
 })
+
+}
+
