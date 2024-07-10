@@ -13,6 +13,10 @@ button.attr('style', 'background-color: #dbddec;')
 for (const btn of button) {
     console.log(btn)
 
+    btn.onmouseover = () => {
+        btn.setAttribute('style', 'border: 4px solid #bab0a4;')
+    }
+
     btn.addEventListener('click', function () {
 
         btn.setAttribute('style', 'background-color: #bab0a4;')
@@ -20,11 +24,16 @@ for (const btn of button) {
        for (let i = 0; i < button.length; i++) {
         if (button[i] !== btn) {
             button[i].setAttribute('style', 'background-color: #dbddec;')
+           
         }
        }
     })
 
 }
+
+
+
+
     
     
 
