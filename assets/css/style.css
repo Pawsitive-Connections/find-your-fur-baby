@@ -1,9 +1,15 @@
 
-
+body {
+    background-color: #ecd3d3;
+}
 header {
     text-align: center;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
+    background-color: #cec0b1;
+    margin-top: 0;
+    padding: 5px 5px 30px 5px;
 }
+
 
 .quiz {
     display: flex;
@@ -54,6 +60,11 @@ header {
     padding-bottom: 35px;
 }
 
+#q1-next:hover {
+    background-color: 	#ecd3d3;
+
+}
+
 .quiz .prev {
     width: 75%;
     right: 100%;
@@ -62,6 +73,15 @@ header {
     border: 4px solid #bab0a4;
     font-size: 17px;
     padding-bottom: 35px;
+
+}
+
+.quiz .next:hover {
+    background-color: 	#ecd3d3;
+}
+
+.quiz .prev:hover {
+    background-color: 	#ecd3d3;
 
 }
 
@@ -94,9 +114,12 @@ header {
 }
 
 .quiz-btns .btn:hover {
-    background-color: #bab0a4	;
+    background-color: #bab0a4;
 }
 
+.question {
+    background-color: 	#ecd3d3;
+}
 
 
 
