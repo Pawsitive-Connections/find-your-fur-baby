@@ -20,28 +20,45 @@
     </section>
     <!-- <div class="container"> -->
         <section class="quiz row">
-            <div id="q1" class="question card-panel">
-                <p>Would you like a dog that is good with children?</p>
+            <div class="col l4">
+                <div class="img">
+                    <img src="./assets/test-images/coco.jpg">
+                </div>
+                <div class="fun-fact-container">
+                    <p class="fun-fact"> <span>Fun Fact!</span> <br> Some dogs like to dig holes in the ground!</p>
+                </div>
+            </div>
+            <div id="q1" class="col l8 question card-panel center">
+                <h5>Would you like a dog that is good with children?</h5>
+                <div class="answers">
+                    <p class="low">1 = least trainable with kids</p>
+                    <p class="center">3 = it doesn't matter</p>
+                    <p class="high">5 = most trainable with kids</p>
+                </div>
                 <div class="quiz-btns col l12 center ">
-                    <!-- hi -->
                     <div class="btn quizBtn 1" id="q1b1"></div>
                     <div class="btn quizBtn 2" id="q1b2"></div>
                     <div class="btn quizBtn 3" id="q1b3"></div>
                     <div class="btn quizBtn 4" id="q1b4"></div>
                     <div class="btn quizBtn 5" id="q1b5"></div>
                 </div>
-                <div class="answers">
-                    <p class="low">I don't care about kids</p>
-                    <p class="high">They must be amazing with kids!</p>
+                <div class="labels">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
                 </div>
+                
                 <div class="next-prev">
                 <button id="q1-next" class="btn waves-effect waves-light next" type="button" name="action">Next
                     <span class="material-icons">pets</span>
                 </button>
                 </div>
             </div>
-            <div id="q2" class="question card-panel hide">
-                <p>Would you like your a dog that is good with other dogs?</p>
+           
+            <div id="q2" class="col s9 question card-panel center hide">
+                <h5>Would you like your a dog that is good with other dogs?</h5>
                 <div class="quiz-btns col l12 center ">
                     <div class="btn quizBtn 1" id="q2b1"></div>
                     <div class="btn quizBtn 2" id="q2b2"></div>
@@ -58,8 +75,8 @@
                 <button id="q2-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                 </div>
             </div>
-            <div id="q3" class="question card-panel hide">
-                <p>Do you mind if they shed?</p>
+            <div id="q3" class="col s9 card-panel center hide">
+                <h5>Do you mind if they shed?</h5>
                 <div class="quiz-btns col l12 center ">
                     <div class="btn quizBtn 1" id="q3b1"></div>
                     <div class="btn quizBtn 2" id="q3b2"></div>
@@ -76,8 +93,8 @@
                 <button id="q3-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                 </div>
             </div>
-            <div id="q4" class="question card-panel hide">
-                <p>Would you like a dog you can groom?</p>
+            <div id="q4" class="col s9 question card-panel center hide">
+                <h5>Would you like a dog you can groom?</h5>
                 <div class="quiz-btns col l12 center ">
                     <div class="btn quizBtn 1" id="q4b1"></div>
                     <div class="btn quizBtn 2" id="q4b2"></div>
@@ -94,8 +111,8 @@
                 <button id="q4-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                 </div>
             </div>
-            <div id="q5" class="question card-panel hide">
-                <p>Do you mind if your dog drools?</p>
+            <div id="q5" class="col s9 question card-panel center hide">
+                <h5>Do you mind if your dog drools?</h5>
                 <div class="quiz-btns col l12 center ">
                     <div class="btn quizBtn 1" id="q5b1"></div>
                     <div class="btn quizBtn 2" id="q5b2"></div>
@@ -112,8 +129,8 @@
                 <button id="q5-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                 </div>
             </div>
-                <div id="q6" class="question card-panel hide">
-                    <p>Do you want a dog with long or short hair?</p>
+                <div id="q6" class="col s9 question card-panel center hide">
+                    <h5>Do you want a dog with long or short hair?</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
@@ -130,8 +147,8 @@
                     <button id="q6-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                     </div>
                 </div>
-                <div id="q7" class="question card-panel hide">
-                    <p>Do you want a dog that is good with strangers</p>
+                <div id="q7" class="col s9 question card-panel center hide">
+                    <h5>Do you want a dog that is good with strangers</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
@@ -148,8 +165,8 @@
                     <button id="q7-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                     </div>
                 </div>
-                <div id="q8" class="question card-panel hide">
-                    <p>Would you like a dog you can play with?</p>
+                <div id="q8" class="col s9 question card-panel center hide">
+                    <h5>Would you like a dog you can play with?</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
@@ -166,8 +183,8 @@
                     <button id="q8-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                     </div>
                 </div>
-                <div id="q9" class="question card-panel hide">
-                    <p>Do you want a dog that is protective of you?</p>
+                <div id="q9" class="col s9 question card-panel center hide">
+                    <h5>Do you want a dog that is protective of you?</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
@@ -184,8 +201,8 @@
                     <button id="q9-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                     </div>
                 </div>
-                <div id="q10" class="question card-panel hide">
-                    <p>Would like a dog that is easily trainable?</p>
+                <div id="q10" class="col s9 question card-panel center hide">
+                    <h5>Would like a dog that is easily trainable?</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
@@ -202,8 +219,8 @@
                     <button id="q10-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                     </div>
                 </div>
-                <div id="q11" class="question card-panel hide">
-                    <p>Would you like a dog that is high energy?</p>
+                <div id="q11" class="col s9 question card-panel center hide">
+                    <h5>Would you like a dog that is high energy?</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
@@ -220,8 +237,8 @@
                     <button id="q11-next" class="btn waves-effect waves-light btn-small next" type="button">Next</button>
                     </div>
                 </div>
-                <div id="q12" class="question card-panel hide">
-                    <p>Do you want a dog who likes to bark?</p>
+                <div id="q12" class="col s9 question card-panel center hide">
+                    <h5>Do you want a dog who likes to bark?</h5>
                     <div class="quiz-btns col l12 center ">
                         <div class="btn quizBtn 1" id="q6b1"></div>
                         <div class="btn quizBtn 2" id="q6b2"></div>
