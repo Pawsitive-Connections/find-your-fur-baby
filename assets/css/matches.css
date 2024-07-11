@@ -4,25 +4,33 @@
 }
 
 section {
-    background-color: #bab0a4;
+    background-color: #ecd3d3;
     height: max-content;
     margin: 0;
     padding: 0;
 }
-.description {
-background-color: #bab0a4;
-display: inline;
-flex: 1;
-flex-direction: column;
-margin-left: 20px;
-
+.image1 .description,
+.image2 .description,
+.image3 .description {
+    flex: 1;
+    background-color: #bab0a4;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    float: right;
 }
 
 header {
-    background-color: 	#ecd3d3;
-    height: 100px;
-    margin: 0;
-    padding: 0;
+    text-align: center;
+    margin-bottom: 100px;
+    background-color: #bab0a4;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px 5px 30px 5px;
+    border-bottom: 7px solid black;
 }
 
 h1 {
@@ -31,27 +39,26 @@ h1 {
     padding-top: 25px;
 }
 
-.dogPhoto {
+/* .dogPhoto {
     flex: 1;
     display: flex;
     display: block;
     flex-wrap: wrap;
-}
+    justify-content: flex-end;
+    
+} */
 
-.image1, .image2, .image3 {
-    height: 400px;
-    width: 400px;
-    background-color: #ecd3d3;
-    margin: 50px;
-    margin-left: 200px;
+.image1 .photo img,
+.image2 .photo img,
+.image3 .photo img {
+    max-width: 100%;
+    max-height: 100%;
 }
-
-.description p {
-    margin: 10px;
-    align-self: flex-end;
+.breed, .details, .findFurBaby {
+    margin-bottom: 10px;
+    width: 100%; 
 }
-
-.appended-image1 {
+.appended-image1, .appended-image2, .appended-image3 {
     height: 400px;
     width: 400px;
 }
