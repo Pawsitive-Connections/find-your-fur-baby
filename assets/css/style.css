@@ -64,6 +64,12 @@ header {
 
 }
 
+#submit {
+    padding-left: 10px;
+}
+
+
+
 .quiz .prev {
     width: 75%;
     right: 100%;
@@ -95,7 +101,7 @@ header {
 .answers p {
     display: inline;
     position: relative;
-    font-size: 15px;
+    font-size: 12px;
     width: 5%;
     background-color: 	#ecd3d3;
     padding: 10px;
@@ -125,6 +131,8 @@ header {
     width: 50px;
     height: 50px;
 }
+
+
 
 .question .labels span {
     margin: 0px 50px 0px 50px;
