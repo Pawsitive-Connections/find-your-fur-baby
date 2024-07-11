@@ -4,6 +4,7 @@ $(document).ready(() => {
     let answers = {};
 
     const showQuestion = (currentQuestion) => {
+        console.log(`Current question ${currentQuestion}`)
         questions.each(function (index) {
             $(this).toggleClass('hide', currentQuestion !== index);
         });
@@ -43,25 +44,24 @@ $(document).ready(() => {
     
 });
 
+
 function getBreeds(answers) {
-    const apiKey = `0RPs3+YvKx3lcRmxrMI8tQ==K6WaN0Jvv5ptwUKa`;
-    const url = `https://api.api-ninjas.com/v1/dogs`;
+    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
+    // const url = `https://api.api-ninjas.com/v1/dogs?good_with_children=${answers.q1}&good_with_other_dogs=${answers.q2}&shedding=${answers.q3}&grooming=${answers.q4}&drooling=${answers.q5}&coat_length=${answers.q6}&good_with_strangers=${answers.q7}&playfulness=${answers.q8}&protectiveness=${answers.q9}&trainability=${answers.q10}&energy=${answers.q11}&barking=${answers.q12}`;
     console.log(apiKey);
     console.log(url);
 
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'X-Api-Key': apiKey
-        }
-    }).then(response => {
+    fetch(url)
+        .then(response => {
         if (!response.ok) {
             throw new Error('Response not found.')
         } 
+        console.log(response.json);
         return response.json();
     })
     .then(data => {
-        const breeds = findBreeds(data, answers);
+        console.log(data);
+        // const breeds = findBreeds(data, answers);
         console.log(breeds);
     })
     .catch(error => {
