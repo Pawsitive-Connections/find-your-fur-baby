@@ -4,7 +4,6 @@ $(document).ready(() => {
     let answers = {};
 
     const showQuestion = (currentQuestion) => {
-        console.log(`Current question ${currentQuestion}`)
         questions.each(function (index) {
             $(this).toggleClass('hide', currentQuestion !== index);
         });
@@ -44,32 +43,18 @@ $(document).ready(() => {
     
 });
 
-const goldenRetriever = {q1: 5, q2:5, q3: 4, q4: 2, q5:2, q6:1, q7:5, q8:4, q9: 3, q10:5, q11: 3, q12: 1}
-const url = `https://api.api-ninjas.com/v1/dogs?good_with_children=${answers.q1}&good_with_other_dogs=${answers.q2}&shedding=${answers.q3}&grooming=${answers.q4}&drooling=${answers.q5}&coat_length=${answers.q6}&good_with_strangers=${answers.q7}&playfulness=${answers.q8}&protectiveness=${answers.q9}&trainability=${answers.q10}&energy=${answers.q11}&barking=${answers.q12}`;
-
-
-// const sample = {
-//     good_with_children: 5,
-//     good_with_other_dogs: 4,
-//     max_weight: 20
-// }
-
-// let dogUrl = "https://api.api-ninjas.com/v1/dogs?";
-// for( const property in sample){
-//     dogUrl += property + "=" + sample[property] + "&"
-// }
-
-
 function getBreeds(answers) {
     const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
-    const url = `https://api.api-ninjas.com/v1/dogs?max_height=500`
-    console.log(apiKey);
-    console.log(url);
+    let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
+
+    for ( const property in answers) {
+        dogUrl += property + "=" + answers[property] + "&";
+    }
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/dogs?max_height=500&&offset=5',
-        headers: { 'X-Api-Key': 'nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC'},
+        url: dogUrl,
+        headers: { 'X-Api-Key': apiKey},
         contentType: 'application/json',
         success: function(result) {
             console.log(result);
@@ -112,21 +97,21 @@ function getBreeds(answers) {
 };
 
 
-function findBreeds(breeds, answers) {
-    return breeds.filter(breed => {
-        return (
-            breed.good_with_children === answers.q1 &&
-            breed.good_with_other_dogs === answers.q2 &&
-            breed.shedding === answers.q3 &&
-            breed.grooming === answers.q4 &&
-            breed.drooling === answers.q5 &&
-            breed.coat_length === answers.q6 &&
-            breed.good_with_strangers === answers.q7 &&
-            breed.playfulness === answers.q8 &&
-            breed.protectiveness === answers.q9 &&
-            breed.trainability === answers.q10 &&
-            breed.energy === answers.q11 &&
-            breed.barking === answers.q12
-        );
-    });
-}
+// function findBreeds(breeds, answers) {
+//     return breeds.filter(breed => {
+//         return (
+//             breed.good_with_children === answers.q1 &&
+//             breed.good_with_other_dogs === answers.q2 &&
+//             breed.shedding === answers.q3 &&
+//             breed.grooming === answers.q4 &&
+//             breed.drooling === answers.q5 &&
+//             breed.coat_length === answers.q6 &&
+//             breed.good_with_strangers === answers.q7 &&
+//             breed.playfulness === answers.q8 &&
+//             breed.protectiveness === answers.q9 &&
+//             breed.trainability === answers.q10 &&
+//             breed.energy === answers.q11 &&
+//             breed.barking === answers.q12
+//         );
+//     });
+// }
