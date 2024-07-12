@@ -18,29 +18,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageContainer.appendChild(imgElement);
                     imgElement.classList.add(`appended-${imageContainerId}`);
 
+                    const container = document.createElement('div')
+                    imageContainer.appendChild(container)
+                    
                     const nameDiv = document.createElement('div');
                     nameDiv.textContent = `Breed: ${data[0].name}`;
-                    imageContainer.appendChild(nameDiv);
+                    container.classList.add('breedSelection')
+                    container.appendChild(nameDiv);
 
-                    const descriptionDiv = document.createElement('div');
+                    const descriptionDiv = document.createElement('p');
                     descriptionDiv.textContent = `Good with Children: ${data[0].good_with_children}`;
-                    imageContainer.appendChild(descriptionDiv);
+                    container.appendChild(descriptionDiv);
 
                     const goodWithOtherDogsElement = document.createElement('p');
                     goodWithOtherDogsElement.textContent = `Good with Other Dogs: ${data[0].good_with_other_dogs}`;
-                    descriptionDiv.appendChild(goodWithOtherDogsElement);
+                    container.appendChild(goodWithOtherDogsElement);
 
                     const sheddingElement = document.createElement('p');
                     sheddingElement.textContent = `Shedding: ${data[0].shedding}`;
-                    descriptionDiv.appendChild(sheddingElement);
+                    container.appendChild(sheddingElement);
 
-                    const groomingElement = document.createElement('p');
-                    groomingElement.textContent = `Grooming: ${data[0].grooming}`;
-                    descriptionDiv.appendChild(groomingElement);
+                    const trainabilityElement = document.createElement('p');
+                    trainabilityElement.textContent = `Trainability: ${data[0].trainability}`;
+                    container.appendChild(trainabilityElement);
 
-                    const droolingElement = document.createElement('p');
-                    droolingElement.textContent = `Drooling: ${data[0].drooling}`;
-                    descriptionDiv.appendChild(droolingElement);
+                    const energyElement = document.createElement('p');
+                    energyElement.textContent = `Energy: ${data[0].energy}`;
+                    container.appendChild(energyElement);
+
                 } else {
                     console.error('Data is empty');
                 }
