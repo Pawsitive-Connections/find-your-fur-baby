@@ -1,3 +1,7 @@
+body {
+    background-color: #ecd3d3;
+}
+
 header {
     margin-bottom: 75px;
     background-color: #bab0a4;
@@ -12,7 +16,7 @@ header {
 }
 
 .bottom .where-to-find {
-    background-color: #ecd3d3;
+    background-color: #dbddec;
     /* margin-right: 50px; */
 
 }

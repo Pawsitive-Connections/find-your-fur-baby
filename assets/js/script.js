@@ -49,6 +49,7 @@ function getBreeds(answers) {
 
     for ( const property in answers) {
         dogUrl += property + "=" + answers[property] + "&";
+       
     }
 
     $.ajax({
@@ -63,6 +64,26 @@ function getBreeds(answers) {
             console.error('Error: ', jqXHR.responseText);
         }
     });
+}
+
+
+    
+// function getBreeds(answers)  {
+//     const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
+//     let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
+//     for ( const property in answers) {
+//                 dogUrl += property + "=" + answers[property] + "&" + "X-Api-Key" + "=" + apiKey;
+               
+//            }
+//     fetch(dogUrl)
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data)
+//     })
+//     .catch(error => {
+//         console.error('error fetching data:', error)
+//     })
+// }
 
 
 
@@ -94,7 +115,7 @@ function getBreeds(answers) {
     // .catch(error => {
     //     console.error(error);
     // }); 
-};
+// }
 
 
 // function findBreeds(breeds, answers) {
