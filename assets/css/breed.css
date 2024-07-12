@@ -1,0 +1,11 @@
+.bottom .where-to-find {
+    background-color: #ecd3d3;
+}
+
+.bottom .about {
+    background-color: #dbddec;
+}
+
+.bottom .where-to-find, .about{
+    margin-right: 20px;
+}
