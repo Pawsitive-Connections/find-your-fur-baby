@@ -1,11 +1,30 @@
+header {
+    margin-bottom: 75px;
+    background-color: #bab0a4;
+    margin-top: 0;
+    padding: 1px;
+    padding-bottom: 20px;
+    border-bottom: 5px solid black;
+}
+.bottom {
+    display: flex;
+
+}
+
 .bottom .where-to-find {
     background-color: #ecd3d3;
+    /* margin-right: 50px; */
+
 }
 
 .bottom .about {
     background-color: #dbddec;
+    margin-left: 50px;
 }
 
 .bottom .where-to-find, .about{
-    margin-right: 20px;
+    border: 5px solid #bab0a4;
+    border-radius: 10px;
+    margin: 0 auto;
 }
+
