@@ -78,6 +78,8 @@ function getBreeds(answers) {
                 } else {
                     breeds = shuffleArray(breeds).slice(0,3);
                     console.log(breeds);
+                    localStorage.setItem('selectedBreeds', JSON.stringify(breeds.map(breed => breed.name)));
+                    window.location.href = 'matches.html';
                 }
             },
             error: function ajaxError(jqXHR) {
