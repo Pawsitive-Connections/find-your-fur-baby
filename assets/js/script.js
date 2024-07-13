@@ -1,6 +1,7 @@
 
 $(document).ready(() => {
     const questions = $('.question');
+    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
     let answers = {};
 
     const showQuestion = (currentQuestion) => {
@@ -39,11 +40,42 @@ $(document).ready(() => {
         getBreeds(answers)
     })
 
-    
-    
-});
+    const fetchFunFact = () => {
+        $.ajax({
+            url: 'https://dogapi.dog/api/v2/facts',
+            method: 'GET',
+            success: function(response) {
+                const fact = response.data[0].attributes.body;
+                $('.fun-fact').text(fact);
+            },
+            error: function() {
+                $('.fun-fact').text('Could not load fun fact.');
+            }
+        });
+    }
 
-const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
+    function fetchDogImage() {
+        $.ajax({
+            url: 'https://dog.ceo/api/breeds/image/random',
+            method: 'GET',
+            success: function(response) {
+                const imageUrl = response.message;
+                $('img').attr('src', imageUrl);
+            },
+            error: function() {
+                $('img').attr('src', './assets/test-images/coco.jpg');
+            }
+        });
+    }
+
+    fetchFunFact();
+    fetchDogImage();
+
+    $('#q1-next, #q2-next, #q2-prev, #q3-next, #q3-prev, #q4-next, #q4-prev, #q5-next, #q5-prev, #q6-next, #q6-prev').click(function() {
+        fetchFunFact();
+        fetchDogImage();
+    })
+});
 
 function createQueryUrl(answers) {
     let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
