@@ -94,6 +94,7 @@ function getBreeds(answers) {
     let breeds =[]
     let queries = Object.keys(answers);
     let dogUrl = createQueryUrl(answers);
+    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
 
     const getBreedPage = (url) => {
         $.ajax({
