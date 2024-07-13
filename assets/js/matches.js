@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     imgElement.classList.add(`appended-${imageContainerId}`);
 
                     const container = document.createElement('divDescription')
+                    container.id = 'description123'
                     imageContainer.appendChild(container)
                     
                     const nameDiv = document.createElement('div');
