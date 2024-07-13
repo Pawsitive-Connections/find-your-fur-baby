@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageContainer.appendChild(imgElement);
                     imgElement.classList.add(`appended-${imageContainerId}`);
 
-                    const container = document.createElement('div')
+                    const container = document.createElement('divDescription')
                     imageContainer.appendChild(container)
                     
                     const nameDiv = document.createElement('div');
                     nameDiv.textContent = `Breed: ${data[0].name}`;
-                    container.classList.add('breedSelection')
+                    nameDiv.classList.add('breedSelection');
                     container.appendChild(nameDiv);
 
                     const descriptionDiv = document.createElement('p');
