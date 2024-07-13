@@ -32,3 +32,19 @@ header {
     margin: 0 auto;
 }
 
+.dog {
+    display: flex;
+}
+
+.dog img {
+    margin: 0px 35px 20px 0px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.link {
+    
+}
+
