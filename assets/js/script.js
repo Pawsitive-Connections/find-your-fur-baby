@@ -79,6 +79,7 @@ $(document).ready(() => {
 
 function createQueryUrl(answers) {
     let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
+
     if (answers.shedding) {
         dogUrl += `shedding=${answers.shedding}&`;
     }
@@ -104,8 +105,10 @@ function getBreeds(answers) {
             contentType: 'application/json',
             success: function(results) {
                 breeds = breeds.concat(results);
+
                 if (breeds.length < 3 && queries.length > 0) {
                     const lastQuery = queries.pop();
+                    
                     dogUrl = removeQueryParameter(dogUrl, lastQuery);
                     getBreedPage(dogUrl);               
                 } else {
