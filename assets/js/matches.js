@@ -55,18 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    fetchDataAndAppend('beagle', apiKey, 'image1');
+    const selectedBreeds = JSON.parse(localStorage.getItem('selectedBreeds')) || [];
 
-    fetchDataAndAppend('bulldog', apiKey, 'image2');
-
-    fetchDataAndAppend('Pug', apiKey, 'image3')
-
-//         // // const breedSelection = data from quiz containing 3 best matces
-//         // breedSelection.forEach((breed, index) => {
-//         //     const imageContainerId = `image${index + 1}`;
-//         //     fetchDataAndAppend(breed, apiKey, imageContainerId);
-            
-//         // });
-// });
+    selectedBreeds.forEach((breed, index) => {
+        const imageContainerId = `image${index + 1}`;
+        fetchDataAndAppend(breed, apiKey, imageContainerId);
+    });
 
 });
