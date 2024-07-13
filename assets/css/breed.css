@@ -1,3 +1,7 @@
+body {
+    background-color: #ecd3d3;
+}
+
 header {
     margin-bottom: 75px;
     background-color: #bab0a4;
@@ -12,7 +16,7 @@ header {
 }
 
 .bottom .where-to-find {
-    background-color: #ecd3d3;
+    background-color: #dbddec;
     /* margin-right: 50px; */
 
 }
@@ -26,5 +30,21 @@ header {
     border: 5px solid #bab0a4;
     border-radius: 10px;
     margin: 0 auto;
+}
+
+.dog {
+    display: flex;
+}
+
+.dog img {
+    margin: 0px 35px 20px 0px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.link {
+    
 }
 
