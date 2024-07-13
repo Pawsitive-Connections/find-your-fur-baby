@@ -8,7 +8,7 @@
 const findSect = document.getElementById('find')
 
 function fetchAdopt () {
-const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/?limit=10&fields['
+const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/?limit=20'
 fetch(url, {
     method: 'GET',
     headers: {
@@ -34,6 +34,7 @@ fetch(url, {
 
 function createLinks (dogs) {
     console.log(dogs.data) 
+
     // images
     for (const dog of dogs.data) {
         let img = dog.attributes.pictureThumbnailUrl
@@ -72,28 +73,31 @@ function createLinks (dogs) {
 
         dogDiv.classList.add('dog')
 
-        const link = dog.attributes.descriptionText
-        const linkRegex = /(https?:\/\/[^\s]+)/;
-        const linkMatch = link.match(linkRegex);
+        // const link = dog.attributes.descriptionText
+        // const linkRegex = /(https?:\/\/[^\s]+)/;
+        // const linkMatch = link.match(linkRegex);
     
 
-        if (linkMatch) {
-            extractedLink = linkMatch[0]
-            // console.log(extractedLink)
-            const linkText = 'Click to Adopt'
-            const a = document.createElement('a')
-            a.href = extractedLink
-            a.textContent = linkText
-            li6.appendChild(a)
+        // if (linkMatch) {
+        //     extractedLink = linkMatch[0]
+        //     // console.log(extractedLink)
+        //     const linkText = 'Click to Adopt'
+        //     const a = document.createElement('a')
+        //     a.href = extractedLink
+        //     a.textContent = linkText
+        //     li6.appendChild(a)
 
-        } else if (dog.attributes.url) {
+        // } else 
+        if (dog.attributes.url) {
             const linkText = 'Click to Adopt'
             const a = document.createElement('a')
             a.href = dog.attributes.url
             a.textContent = linkText
             li6.appendChild(a)
-
+        } else {
+            dogDiv.remove();
         }
+
 
 
 
