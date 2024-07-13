@@ -60,7 +60,8 @@ function createLinks (dogs) {
         li3.textContent = dog.attributes.ageString
         li4.textContent = dog.attributes.colorDetails
         li5.textContent = dog.attributes.sex
-        li6.textContent = dog.attributes.rescueId
+        li6.classList.add('link')
+        // li6.textContent = dog.attributes.rescueId
 
 
         findSect.appendChild(dogDiv)
@@ -70,6 +71,29 @@ function createLinks (dogs) {
         findSect.appendChild(dogDiv)
 
         dogDiv.classList.add('dog')
+
+        const link = dog.attributes.descriptionText
+        const linkRegex = /(https?:\/\/[^\s]+)/;
+        const linkMatch = link.match(linkRegex);
+    
+
+        if (linkMatch) {
+            extractedLink = linkMatch[0]
+            // console.log(extractedLink)
+            const linkText = 'Click to Adopt'
+            const a = document.createElement('a')
+            a.href = extractedLink
+            a.textContent = linkText
+            li6.appendChild(a)
+
+        } else if (dog.attributes.url) {
+            const linkText = 'Click to Adopt'
+            const a = document.createElement('a')
+            a.href = dog.attributes.url
+            a.textContent = linkText
+            li6.appendChild(a)
+
+        }
 
 
 
