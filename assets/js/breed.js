@@ -6,20 +6,50 @@
 // findSect.append(imgDiv)
 // findSect.append(infoDiv)
 const findSect = document.getElementById('find')
+const zip = $('#textarea1')
+
+let mileRadius
+let zipcode
+
+i
 
 function fetchAdopt () {
-const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/?limit=20'
-fetch(url, {
-    method: 'GET',
-    headers: {
-        'Authorization': 'DBLRH7bt'
+const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
+let myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/vnd.api+json");
+myHeaders.append("Authorization", "DBLRH7bt");
+
+let raw = JSON.stringify({
+  "data": {
+    "filters": [
+      {
+        "fieldName": "animals.breedPrimary",
+        "operation": "equal",
+        "criteria": "Golden Retriever"
+      },
+    ],
+    // "filterProcessing": "1 and 2",
+    "filterRadius": {
+      "miles": mileRadius,
+      "postalcode": zipcode
     }
-})
+  }
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch(url, requestOptions)
 .then(response => response.json())
 .then(data => {
     console.log(data)
     // data = data.data
     // console.log(data)
+
     
    
     createLinks(data)
@@ -34,6 +64,7 @@ fetch(url, {
 
 function createLinks (dogs) {
     console.log(dogs.data) 
+
 
     // images
     for (const dog of dogs.data) {
@@ -87,7 +118,7 @@ function createLinks (dogs) {
         //     a.textContent = linkText
         //     li6.appendChild(a)
 
-        // } else 
+        // } else b
         if (dog.attributes.url) {
             const linkText = 'Click to Adopt'
             const a = document.createElement('a')
@@ -96,6 +127,9 @@ function createLinks (dogs) {
             li6.appendChild(a)
         } else {
             dogDiv.remove();
+            const h2 = document.getElementById('breedH2')
+            h2.textContent = 'There are no [breeds] in that area'
+
         }
 
 
@@ -110,3 +144,7 @@ fetchAdopt()
 
 
 
+
+$(document).ready(function(){
+    $('select').formSelect();
+  });

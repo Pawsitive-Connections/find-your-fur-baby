@@ -13,22 +13,32 @@
     </header>
 
     <section class="top">
-        <div class="img">
-
+        <div class="form">
+            <form class="row">
+                    <div class="input-field col l2">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Zip Code</label>
+                    </div>
+                    <div class="input-field col l2">
+                        <select class="black">
+                            <option value="" disabled selected>miles within radius</option>
+                            <option value="10">10 Miles</option>
+                            <option value="30">30 Miles</option>
+                            <option value="50">50 Miles</option>
+                            <option value="100">100 Miles</option>
+                        </select>
+                        <label></label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Find [breed] near me!</button>
+            </form>
         </div>
 
     </section>
     <section class="bottom row">
-
+    
     <div class="where-to-find col l5">
-        <h2>Find my [breed]!</h2>
+        <h4 id="breedH2">Find my [breed]!</h4>
         <div class="adopt" id="find">
-            <!-- What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Why do we use it?
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-            Where does it come from?
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,  -->
         </div>
     </div>
     <div class="about col l5">
