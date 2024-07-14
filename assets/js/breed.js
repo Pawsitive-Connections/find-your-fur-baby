@@ -6,12 +6,26 @@
 // findSect.append(imgDiv)
 // findSect.append(infoDiv)
 const findSect = document.getElementById('find')
-const zip = $('#textarea1')
+const submit = document.getElementById('submit')
+const zip = document.getElementById('textarea1')
+const mile = document.getElementById('miles')
+
+const h2 = document.getElementById('breedH2')
+
+submit.addEventListener('click', function (event){
+    event.preventDefault();
+    console.log(zip.value, mile.value)
+    submit.setAttribute('style', 'background-color: #dbddec;')
+    fetchAdopt()
+
+    
+})
 
 let mileRadius
 let zipcode
+let breed = 'beagle'
 
-i
+h2.textContent = `Find my ${breed}!`
 
 function fetchAdopt () {
 const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
@@ -25,13 +39,13 @@ let raw = JSON.stringify({
       {
         "fieldName": "animals.breedPrimary",
         "operation": "equal",
-        "criteria": "Golden Retriever"
+        "criteria": breed
       },
     ],
     // "filterProcessing": "1 and 2",
     "filterRadius": {
-      "miles": mileRadius,
-      "postalcode": zipcode
+      "miles": mile.value,
+      "postalcode": zip.value
     }
   }
 });
@@ -58,19 +72,25 @@ fetch(url, requestOptions)
 })
 .catch(error => {
     console.error('error fetching data:', error)
+     h2.textContent = `There are no ${breed}s in that area`
 })
 }
+
+let dogArray = []
 
 
 function createLinks (dogs) {
     console.log(dogs.data) 
 
+    let dogDiv
+    let isDogs = false;
+    let isNoDogs = false;
 
     // images
     for (const dog of dogs.data) {
         let img = dog.attributes.pictureThumbnailUrl
         const imgEl = document.createElement('img')
-        const dogDiv = document.createElement('div')
+        dogDiv = document.createElement('div')
         const ul = document.createElement('ul')
         const li1 = document.createElement('li')
         const li2 = document.createElement('li')
@@ -125,21 +145,64 @@ function createLinks (dogs) {
             a.href = dog.attributes.url
             a.textContent = linkText
             li6.appendChild(a)
-        } else {
-            dogDiv.remove();
-            const h2 = document.getElementById('breedH2')
-            h2.textContent = 'There are no [breeds] in that area'
+            isDogs = true;
 
         }
+        else {
+            dogDiv.remove(); 
+            isNoDogs = true
+            
+        }
 
+    
+        
 
+        dogArray.push(dogDiv)
+        // if (dogArray === dog.attributes.url) {
+        //     console.log('all dogs')
+        // } else if (dogArray === dog.attributes.url && dogArray !== dog.attributes.url) {
+        //     console.log('some dogs')
+        // } else if (dogArray !== dog.attributes.url) {
+        //     console.log('no dogs')
+        // }
+        
+    // }
+   
+   
+}
 
+if (isDogs === true && isNoDogs === true) {
+    console.log('all dogs are up')
+} else if (isDogs === true && isNoDogs === false) {
+    console.log('some dogs are up')
+} else if (isDogs === false && isNoDogs === true) {
+       h2.textContent = `There are no ${breed}s in that area`
+}
 
+for (const div of dogArray) {
+    if (div) {
+        console.log('div')
+    } else {
+        console.log('no div')
     }
+}
+// if (dogDiv) {
+//         console.log('there are dogs')
+// } 
+// else if (dogDiv && !dogDiv) {
+//         console.log('there are some dogs')
+// } else if (!dogDiv) {
+
+//         console.log('there are no dogs')
+     
+//    }
+
+console.log(dogArray)
+
+
 
 }
 
-fetchAdopt()
 // createLinks()
 
 
