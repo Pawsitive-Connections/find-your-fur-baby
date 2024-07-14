@@ -1,6 +1,7 @@
 
 $(document).ready(() => {
     const questions = $('.question');
+    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
     let answers = {};
 
     const showQuestion = (currentQuestion) => {
@@ -39,100 +40,108 @@ $(document).ready(() => {
         getBreeds(answers)
     })
 
-    
-    
-});
-
-function getBreeds(answers) {
-    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
-    let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
-
-    for ( const property in answers) {
-        dogUrl += property + "=" + answers[property] + "&";
-       
+    const fetchFunFact = () => {
+        $.ajax({
+            url: 'https://dogapi.dog/api/v2/facts',
+            method: 'GET',
+            success: function(response) {
+                const fact = response.data[0].attributes.body;
+                $('.fun-fact').text(fact);
+            },
+            error: function() {
+                $('.fun-fact').text('Could not load fun fact.');
+            }
+        });
     }
 
-    $.ajax({
-        method: 'GET',
-        url: dogUrl,
-        headers: { 'X-Api-Key': apiKey},
-        contentType: 'application/json',
-        success: function(result) {
-            console.log(result);
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
+    function fetchDogImage() {
+        $.ajax({
+            url: 'https://dog.ceo/api/breeds/image/random',
+            method: 'GET',
+            success: function(response) {
+                const imageUrl = response.message;
+                $('img').attr('src', imageUrl);
+            },
+            error: function() {
+                $('img').attr('src', './assets/test-images/coco.jpg');
+            }
+        });
+    }
+
+    fetchFunFact();
+    fetchDogImage();
+
+    $('#q1-next, #q2-next, #q2-prev, #q3-next, #q3-prev, #q4-next, #q4-prev, #q5-next, #q5-prev, #q6-next, #q6-prev').click(function() {
+        fetchFunFact();
+        fetchDogImage();
+    })
+});
+
+function createQueryUrl(answers) {
+    let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
+
+    if (answers.shedding) {
+        dogUrl += `shedding=${answers.shedding}&`;
+    }
+    for ( const property in answers) {
+        if (property !== "shedding") {
+        dogUrl += `${property}=${answers[property]}&`;
         }
-    });
+    }
+    return dogUrl.slice(0, -1);
 }
 
+function getBreeds(answers) {
+    let breeds =[]
+    let queries = Object.keys(answers);
+    let dogUrl = createQueryUrl(answers);
+    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
 
-    
-// function getBreeds(answers)  {
-//     const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
-//     let dogUrl = `https://api.api-ninjas.com/v1/dogs?`;
-//     for ( const property in answers) {
-//                 dogUrl += property + "=" + answers[property] + "&" + "X-Api-Key" + "=" + apiKey;
-               
-//            }
-//     fetch(dogUrl)
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data)
-//     })
-//     .catch(error => {
-//         console.error('error fetching data:', error)
-//     })
-// }
+    const getBreedPage = (url) => {
+        $.ajax({
+            method: 'GET',
+            url: url,
+            headers: { 'X-Api-Key': apiKey},
+            contentType: 'application/json',
+            success: function(results) {
+                breeds = breeds.concat(results);
 
+                if (breeds.length < 3 && queries.length > 0) {
+                    const lastQuery = queries.pop();
+                    
+                    dogUrl = removeQueryParameter(dogUrl, lastQuery);
+                    getBreedPage(dogUrl);               
+                } else {
+                    breeds = shuffleArray(breeds).slice(0,3);
+                    console.log(breeds);
+                    localStorage.setItem('selectedBreeds', JSON.stringify(breeds.map(breed => breed.name)));
+                    window.location.href = 'matches.html';
+                }
+            },
+            error: function ajaxError(jqXHR) {
+                console.error('Error: ', jqXHR.responseText);
+            }
+        });
+    };
+    getBreedPage(dogUrl);
+};
 
+function removeQueryParameter(url, parameter) {
+    const urlSections = url.split('?');
+    const baseUrl = urlSections[0];
+    const queryParams = new URLSearchParams(urlSections[1]);
 
+    queryParams.delete(parameter);
 
+    const newQueryString = queryParams.toString();
+    return `${baseUrl}?${newQueryString}`
+}
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
-
-
-
-    // fetch(url, {
-    //     method: `Get`,
-    //     headers: {
-    //         'X-Api-Key': apiKey,
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error('Response not found.')
-    //     } 
-    //     console.log(response.json);
-    //     return response.json();
-    // })
-    // .then(data => {
-    //     console.log(data);
-    //     // const breeds = findBreeds(data, answers);
-    //     // console.log(breeds);
-    // })
-    // .catch(error => {
-    //     console.error(error);
-    // }); 
-// }
-
-
-// function findBreeds(breeds, answers) {
-//     return breeds.filter(breed => {
-//         return (
-//             breed.good_with_children === answers.q1 &&
-//             breed.good_with_other_dogs === answers.q2 &&
-//             breed.shedding === answers.q3 &&
-//             breed.grooming === answers.q4 &&
-//             breed.drooling === answers.q5 &&
-//             breed.coat_length === answers.q6 &&
-//             breed.good_with_strangers === answers.q7 &&
-//             breed.playfulness === answers.q8 &&
-//             breed.protectiveness === answers.q9 &&
-//             breed.trainability === answers.q10 &&
-//             breed.energy === answers.q11 &&
-//             breed.barking === answers.q12
-//         );
-//     });
-// }

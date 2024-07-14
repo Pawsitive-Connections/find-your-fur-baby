@@ -18,12 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageContainer.appendChild(imgElement);
                     imgElement.classList.add(`appended-${imageContainerId}`);
 
-                    const container = document.createElement('div')
+                    const container = document.createElement('divDescription')
+                    container.id = 'description123'
                     imageContainer.appendChild(container)
                     
                     const nameDiv = document.createElement('div');
                     nameDiv.textContent = `Breed: ${data[0].name}`;
-                    container.classList.add('breedSelection')
+                    nameDiv.classList.add('breedSelection');
                     container.appendChild(nameDiv);
 
                     const descriptionDiv = document.createElement('p');
@@ -55,18 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    fetchDataAndAppend('beagle', apiKey, 'image1');
+    const selectedBreeds = JSON.parse(localStorage.getItem('selectedBreeds')) || [];
 
-    fetchDataAndAppend('bulldog', apiKey, 'image2');
-
-    fetchDataAndAppend('Pug', apiKey, 'image3')
-
-//         // // const breedSelection = data from quiz containing 3 best matces
-//         // breedSelection.forEach((breed, index) => {
-//         //     const imageContainerId = `image${index + 1}`;
-//         //     fetchDataAndAppend(breed, apiKey, imageContainerId);
-            
-//         // });
-// });
+    selectedBreeds.forEach((breed, index) => {
+        const imageContainerId = `image${index + 1}`;
+        fetchDataAndAppend(breed, apiKey, imageContainerId);
+    });
 
 });

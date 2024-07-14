@@ -15,6 +15,7 @@ header {
 
 }
 
+
 .bottom .where-to-find {
     background-color: #dbddec;
     /* margin-right: 50px; */
@@ -44,7 +45,63 @@ header {
     font-weight: bold;
 }
 
-.link {
-    
+
+
+.form {
+    background-color: #dbddec;
+    width: 75%;
+    margin: 0px 0px 30px 66px;
+    padding: 30px 0px 0px 20px;
+    border: 5px solid #bab0a4;
+    border-radius: 10px;
 }
+
+
+.form button {
+    background-color: #dbddec;
+    color: #000;
+    /* margin: 20px 0px 0px 50px; */
+    border: 5px solid #bab0a4;
+    border-radius: 5px;
+    text-align: center;
+    height: 50px;
+
+
+}
+
+.form .input-field {
+    /* border: 5px solid #bab0a4;
+    border-radius: 5px; */
+    margin: 0px 20px 0px 20px;
+    height: 75px;
+}
+
+.form button:hover {
+    background-color: #bab0a4;
+}
+
+.form form .input-field label {
+    color: black;
+}
+
+   /* label focus color */
+   .input-field #textarea1:focus + label {
+    color: #000;
+  }
+  /* label underline focus color */
+  .input-field #textarea1:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+
+  .input-field select option {
+    color: black;
+  }
+
+  .input-field select option:focus {
+    border-bottom: 1px solid #000;
+  }
+
+
+
 
