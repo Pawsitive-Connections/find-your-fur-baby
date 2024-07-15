@@ -72,8 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     nameDiv.classList.add('breedSelection');
                     container.appendChild(nameDiv);
 
+                    
                     const attributes = ['good_with_children', 'good_with_other_dogs', 'shedding', 'trainability', 'energy', 'barking'];
-
+                    
                     attributes.forEach(attribute => {
                         const score = data[0][attribute];
                         const sentence = sentences[attribute][score];
@@ -81,26 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         attributeEle.textContent = sentence;
                         container.appendChild(attributeEle);
                     })
-
-                    // const descriptionDiv = document.createElement('p');
-                    // descriptionDiv.textContent = `Good with Children: ${data[0].good_with_children}`;
-                    // container.appendChild(descriptionDiv);
-
-                    // const goodWithOtherDogsElement = document.createElement('p');
-                    // goodWithOtherDogsElement.textContent = `Good with Other Dogs: ${data[0].good_with_other_dogs}`;
-                    // container.appendChild(goodWithOtherDogsElement);
-
-                    // const sheddingElement = document.createElement('p');
-                    // sheddingElement.textContent = `Shedding: ${data[0].shedding}`;
-                    // container.appendChild(sheddingElement);
-
-                    // const trainabilityElement = document.createElement('p');
-                    // trainabilityElement.textContent = `Trainability: ${data[0].trainability}`;
-                    // container.appendChild(trainabilityElement);
-
-                    // const energyElement = document.createElement('p');
-                    // energyElement.textContent = `Energy: ${data[0].energy}`;
-                    // container.appendChild(energyElement);
+                    
+                    const button = document.createElement('button');
+                    button.textContent = `Find your very own ${data[0].name}!`;
+                    button.classList.add('btn', 'wave-effect', 'wave-light');
+                    button.addEventListener('click', () => {
+                        localStorage.setItem('selectedBreed', data[0].name);
+                        window.location.href = 'breed.html';
+                    });
+                    container.appendChild(button);
 
                 } else {
                     console.error('Data is empty');

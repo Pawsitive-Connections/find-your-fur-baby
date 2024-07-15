@@ -12,6 +12,10 @@ const mile = document.getElementById('miles')
 
 const h2 = document.getElementById('breedH2')
 
+let breed = localStorage.getItem('selectedBreed');
+h2.textContent = `Find my ${breed}!`;
+
+
 submit.addEventListener('click', function (event){
     event.preventDefault();
     anywhere.setAttribute('style', 'background-color: #dbddec;')
@@ -24,14 +28,11 @@ anywhere.addEventListener('click', function (event){
     event.preventDefault();
     console.log('clicked')
     submit.setAttribute('style', 'background-color: #dbddec;')
-    fetchAnywhere()
-
-    
+    fetchAdopt()
 })
 
-let mileRadius
-let zipcode
-let breed = 'beagle'
+    fetchAnywhere()
+
 
 h2.textContent = `Find my ${breed}!`
 function fetchAnywhere () {
