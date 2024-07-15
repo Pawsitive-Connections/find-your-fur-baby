@@ -18,59 +18,136 @@ h2.textContent = `Find my ${breed}!`;
 
 submit.addEventListener('click', function (event){
     event.preventDefault();
+    anywhere.setAttribute('style', 'background-color: #dbddec;')
+    fetchAdopt()
+
+    
+})
+const anywhere = document.getElementById('anywhere');
+anywhere.addEventListener('click', function (event){
+    event.preventDefault();
     console.log(zip.value, mile.value)
     submit.setAttribute('style', 'background-color: #dbddec;')
+<<<<<<< HEAD:assets/js/breed.js
     fetchAdopt()
 })
 
-function fetchAdopt () {
-const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
-let myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/vnd.api+json");
-myHeaders.append("Authorization", "DBLRH7bt");
+=======
+    fetchAnywhere()
 
-let raw = JSON.stringify({
-  "data": {
-    "filters": [
-      {
-        "fieldName": "animals.breedPrimary",
-        "operation": "equal",
-        "criteria": breed
-      },
-    ],
-    // "filterProcessing": "1 and 2",
-    "filterRadius": {
-      "miles": mile.value,
-      "postalcode": zip.value
+    
+})
+
+let mileRadius
+let zipcode
+let breed = 'beagle'
+
+h2.textContent = `Find my ${breed}!`
+function fetchAnywhere () {
+
+  const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/?sort=random&limit=25'
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/vnd.api+json");
+  myHeaders.append("Authorization", "DBLRH7bt");
+  
+  let raw = JSON.stringify({
+    "data": {
+      "filters": [
+        {
+          "fieldName": "animals.breedPrimary",
+          "operation": "equal",
+          "criteria": breed
+        },
+      ],
     }
+  });
+  
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  
+  };
+  
+  
+      
+      
+  
+  fetch(url, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+      console.log(data)
+      // data = data.data
+      // console.log(data)
+  
+      
+     
+      createLinks(data)
+  
+      
+  })
+  .catch(error => {
+      console.error('error fetching data:', error)
+       h2.textContent = `There are no ${breed}s in that area`
+  })
   }
-});
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+>>>>>>> 1a6caf4d055c1e3b1e2d2634fea6a0b8630c2a7c:assets/js/find-breed.js
+function fetchAdopt () {
 
-fetch(url, requestOptions)
-.then(response => response.json())
-.then(data => {
-    console.log(data)
-    // data = data.data
-    // console.log(data)
-
-    
-   
-    createLinks(data)
-
-    
-})
-.catch(error => {
-    console.error('error fetching data:', error)
-     h2.textContent = `There are no ${breed}s in that area`
-})
-}
+  const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/vnd.api+json");
+  myHeaders.append("Authorization", "DBLRH7bt");
+  
+  let raw = JSON.stringify({
+    "data": {
+      "filters": [
+        {
+          "fieldName": "animals.breedPrimary",
+          "operation": "equal",
+          "criteria": breed
+        },
+      ],
+      // "filterProcessing": "1 and 2",
+      "filterRadius": {
+        "miles": mile.value,
+        "postalcode": zip.value
+      }
+    }
+  });
+  
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  
+  };
+  
+  
+      
+      
+  
+  fetch(url, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+      console.log(data)
+      // data = data.data
+      // console.log(data)
+  
+      
+     
+      createLinks(data)
+  
+      
+  })
+  .catch(error => {
+      console.error('error fetching data:', error)
+       h2.textContent = `There are no ${breed}s in that area`
+  })
+  }
 
 let dogArray = []
 
