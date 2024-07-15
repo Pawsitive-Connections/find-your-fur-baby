@@ -1,7 +1,6 @@
 
 $(document).ready(() => {
     const questions = $('.question');
-    const apiKey = `nRPoBjRs5ZStqGdhxXi3zA==vDeVKQVySaNORCHC`;
     let answers = {};
 
     const showQuestion = (currentQuestion) => {
@@ -108,7 +107,7 @@ function getBreeds(answers) {
 
                 if (breeds.length < 3 && queries.length > 0) {
                     const lastQuery = queries.pop();
-                    
+
                     dogUrl = removeQueryParameter(dogUrl, lastQuery);
                     getBreedPage(dogUrl);               
                 } else {
