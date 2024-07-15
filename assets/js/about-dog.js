@@ -1,14 +1,18 @@
 const dog = document.getElementsByClassName('dog');
+// const allDogs = document.getElementById('anywhere')
+console.log(dog)
 
+anywhere.addEventListener('clicked', function (event) {
+    event.preventDefault()
+    console.log('clicked')
+})
 
-// dog.addEventListener('mouseover', function () {
-   
+// for (const dog of [HTMLCollection]) {
+//     console.log(dog)
+
+// dog.addEventListenor('click', function (event) {
+//     event.preventDefault()
+//     console.log('clicked')
 // })
 
-dog.onmouseover = (event) => {
-    const name = document.getElementsByClassName('name')
-    name.setAttribute('style', 'color: purple;')
-}
-dog.addEventListener('click', function (event) {
-    event.preventDefault()
-})
+// }

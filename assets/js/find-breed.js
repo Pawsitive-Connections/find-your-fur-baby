@@ -22,7 +22,7 @@ submit.addEventListener('click', function (event){
 const anywhere = document.getElementById('anywhere');
 anywhere.addEventListener('click', function (event){
     event.preventDefault();
-    console.log(zip.value, mile.value)
+    console.log('clicked')
     submit.setAttribute('style', 'background-color: #dbddec;')
     fetchAnywhere()
 
