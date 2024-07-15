@@ -19,12 +19,14 @@ header {
 .bottom .where-to-find {
     background-color: #dbddec;
     /* margin-right: 50px; */
+    height: auto;
 
 }
 
 .bottom .about {
     background-color: #dbddec;
     margin-left: 50px;
+    height: 50%;
 }
 
 .bottom .where-to-find, .about{
