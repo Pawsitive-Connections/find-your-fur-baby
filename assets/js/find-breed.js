@@ -28,19 +28,11 @@ anywhere.addEventListener('click', function (event){
     event.preventDefault();
     console.log(zip.value, mile.value)
     submit.setAttribute('style', 'background-color: #dbddec;')
-<<<<<<< HEAD:assets/js/breed.js
     fetchAdopt()
 })
 
-=======
     fetchAnywhere()
 
-    
-})
-
-let mileRadius
-let zipcode
-let breed = 'beagle'
 
 h2.textContent = `Find my ${breed}!`
 function fetchAnywhere () {
@@ -93,7 +85,6 @@ function fetchAnywhere () {
   })
   }
 
->>>>>>> 1a6caf4d055c1e3b1e2d2634fea6a0b8630c2a7c:assets/js/find-breed.js
 function fetchAdopt () {
 
   const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
