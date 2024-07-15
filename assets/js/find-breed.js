@@ -201,7 +201,7 @@ function createLinks (dogs) {
         //     a.textContent = linkText
         //     li6.appendChild(a)
 
-        // } else b
+        // } 
         if (dog.attributes.url) {
             const linkText = 'Click to Adopt'
             const a = document.createElement('a')
