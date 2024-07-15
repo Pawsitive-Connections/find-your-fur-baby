@@ -12,20 +12,16 @@ const mile = document.getElementById('miles')
 
 const h2 = document.getElementById('breedH2')
 
+let breed = localStorage.getItem('selectedBreed');
+h2.textContent = `Find my ${breed}!`;
+
+
 submit.addEventListener('click', function (event){
     event.preventDefault();
     console.log(zip.value, mile.value)
     submit.setAttribute('style', 'background-color: #dbddec;')
     fetchAdopt()
-
-    
 })
-
-let mileRadius
-let zipcode
-let breed = 'beagle'
-
-h2.textContent = `Find my ${breed}!`
 
 function fetchAdopt () {
 const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
