@@ -14,9 +14,17 @@ const h2 = document.getElementById('breedH2')
 
 submit.addEventListener('click', function (event){
     event.preventDefault();
+    anywhere.setAttribute('style', 'background-color: #dbddec;')
+    fetchAdopt()
+
+    
+})
+const anywhere = document.getElementById('anywhere');
+anywhere.addEventListener('click', function (event){
+    event.preventDefault();
     console.log(zip.value, mile.value)
     submit.setAttribute('style', 'background-color: #dbddec;')
-    fetchAdopt()
+    fetchAnywhere()
 
     
 })
@@ -26,55 +34,110 @@ let zipcode
 let breed = 'beagle'
 
 h2.textContent = `Find my ${breed}!`
+function fetchAnywhere () {
+
+  const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/?sort=random&limit=25'
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/vnd.api+json");
+  myHeaders.append("Authorization", "DBLRH7bt");
+  
+  let raw = JSON.stringify({
+    "data": {
+      "filters": [
+        {
+          "fieldName": "animals.breedPrimary",
+          "operation": "equal",
+          "criteria": breed
+        },
+      ],
+    }
+  });
+  
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  
+  };
+  
+  
+      
+      
+  
+  fetch(url, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+      console.log(data)
+      // data = data.data
+      // console.log(data)
+  
+      
+     
+      createLinks(data)
+  
+      
+  })
+  .catch(error => {
+      console.error('error fetching data:', error)
+       h2.textContent = `There are no ${breed}s in that area`
+  })
+  }
 
 function fetchAdopt () {
-const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
-let myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/vnd.api+json");
-myHeaders.append("Authorization", "DBLRH7bt");
 
-let raw = JSON.stringify({
-  "data": {
-    "filters": [
-      {
-        "fieldName": "animals.breedPrimary",
-        "operation": "equal",
-        "criteria": breed
-      },
-    ],
-    // "filterProcessing": "1 and 2",
-    "filterRadius": {
-      "miles": mile.value,
-      "postalcode": zip.value
+  const url = 'https://api.rescuegroups.org/v5/public/animals/search/available/dogs/'
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/vnd.api+json");
+  myHeaders.append("Authorization", "DBLRH7bt");
+  
+  let raw = JSON.stringify({
+    "data": {
+      "filters": [
+        {
+          "fieldName": "animals.breedPrimary",
+          "operation": "equal",
+          "criteria": breed
+        },
+      ],
+      // "filterProcessing": "1 and 2",
+      "filterRadius": {
+        "miles": mile.value,
+        "postalcode": zip.value
+      }
     }
+  });
+  
+  let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  
+  };
+  
+  
+      
+      
+  
+  fetch(url, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+      console.log(data)
+      // data = data.data
+      // console.log(data)
+  
+      
+     
+      createLinks(data)
+  
+      
+  })
+  .catch(error => {
+      console.error('error fetching data:', error)
+       h2.textContent = `There are no ${breed}s in that area`
+  })
   }
-});
-
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
-
-fetch(url, requestOptions)
-.then(response => response.json())
-.then(data => {
-    console.log(data)
-    // data = data.data
-    // console.log(data)
-
-    
-   
-    createLinks(data)
-
-    
-})
-.catch(error => {
-    console.error('error fetching data:', error)
-     h2.textContent = `There are no ${breed}s in that area`
-})
-}
 
 let dogArray = []
 
