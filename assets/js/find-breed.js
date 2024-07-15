@@ -161,6 +161,8 @@ function createLinks (dogs) {
         const li4 = document.createElement('li')
         const li5 = document.createElement('li')
         const li6 = document.createElement('li')
+        const des = document.createElement('p')
+   
 
         ul.appendChild(li1)
         ul.appendChild(li2)
@@ -169,40 +171,45 @@ function createLinks (dogs) {
         ul.appendChild(li5)
         ul.appendChild(li6)
 
+
+
         li1.textContent = dog.attributes.name
         li1.classList.add('name')
         li2.textContent = dog.attributes.breedPrimary
         li3.textContent = dog.attributes.ageString
         li4.textContent = dog.attributes.colorDetails
         li5.textContent = dog.attributes.sex
+        des.textContent = dog.attributes.descriptionText
+  
+
         li6.classList.add('link')
+        des.classList.add('hide')
+  
+
+    
+
+
         // li6.textContent = dog.attributes.rescueId
 
 
         findSect.appendChild(dogDiv)
         imgEl.setAttribute('src', img)
         dogDiv.appendChild(imgEl)
+        dogDiv.appendChild(des)
         dogDiv.appendChild(ul)
         findSect.appendChild(dogDiv)
 
         dogDiv.classList.add('dog')
 
-        // const link = dog.attributes.descriptionText
-        // const linkRegex = /(https?:\/\/[^\s]+)/;
-        // const linkMatch = link.match(linkRegex);
+        const link = dog.attributes.descriptionText
+     
+
+          // const linkRegex = /(https?:\/\/[^\s]+)/;
+          // const linkMatch = link.match(linkRegex);
+        
     
 
-        // if (linkMatch) {
-        //     extractedLink = linkMatch[0]
-        //     // console.log(extractedLink)
-        //     const linkText = 'Click to Adopt'
-        //     const a = document.createElement('a')
-        //     a.href = extractedLink
-        //     a.textContent = linkText
-        //     li6.appendChild(a)
-
-        // } 
-        if (dog.attributes.url) {
+      if (dog.attributes.url) {
             const linkText = 'Click to Adopt'
             const a = document.createElement('a')
             a.href = dog.attributes.url
@@ -210,8 +217,25 @@ function createLinks (dogs) {
             li6.appendChild(a)
             isDogs = true;
 
-        }
-        else {
+
+        }   
+      //   else if (link) {
+      //     const linkRegex = /(https?:\/\/[^\s]+)/;
+      //     const linkMatch = link.match(linkRegex);
+      //     extractedLink = linkMatch
+      //     // console.log(extractedLink)
+      //     const linkText = 'Click to Adopt'
+      //     const a = document.createElement('a')
+      //     a.href = extractedLink
+      //     a.textContent = linkText
+      //     li6.appendChild(a)
+      //     isDogs = true
+
+      // } 
+      else if (dog.attributes.descriptionText) {
+          isDogs = true;
+      }
+      else {
             dogDiv.remove(); 
             isNoDogs = true
             
@@ -230,7 +254,7 @@ function createLinks (dogs) {
         // }
         
     // }
-   
+    aboutDog(dogArray)
    
 }
 
@@ -264,10 +288,38 @@ console.log(dogArray)
 
 
 
+
 }
 
 // createLinks()
 
+// console.log(aboutText.textContent)
+function aboutDog (pickADog) {
+
+  // console.log(description)
+  const aboutText = document.getElementById('aboutBreed')
+  const pText = document.getElementById('description')
+  for (const dog of pickADog) {
+    dog.addEventListener('click', function (event) {
+      // event.preventDefault()
+      // console.log(dogData)
+    document.getElementById('dHeader').classList.remove('hide')
+
+    // console.log(dog)
+    let dogName = dog.lastChild.childNodes[0].innerText
+    aboutText.textContent = `More about ${dogName}`;
+    let description = dog.children[1].innerText;
+    let cleanDes = description.replace('&nbsp;', ' ')
+    pText.textContent = cleanDes
+    pText.classList.remove('center')
+
+
+
+
+
+  })
+  }
+}
 
 
 
