@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const container = document.createElement('divDescription')
                 container.id = 'description123'
-                imageContainer.appendChild(container)
                 
                 const nameDiv = document.createElement('div');
                 nameDiv.textContent = `Breed: ${data[0].name}`;
@@ -105,7 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 // const sects = document.getElementsByClassName('description')
                 // console.log(sects)
-                container.appendChild(button);
+                const btnContainer = document.createElement('div')
+                btnContainer.classList.add('btn-container')
+                btnContainer.appendChild(button);
+                imageContainer.appendChild(btnContainer)
+                imageContainer.appendChild(container)
+
 
             } else {
                 console.error('Data is empty');
