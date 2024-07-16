@@ -20,13 +20,20 @@ header {
     height: 162px;
     margin-bottom: 100px;
     align-content: center;
+    /* background-color: #bab0a4;
+    display: flex; */
 }
 
 header h1 {
-    /* margin: 0 auto; */
+    /* margin: 0 auto;
     position: relative;
-    left: -600px;
+    left: -600px; */
+    margin: 0 auto;
 
+}
+
+header img {
+    position: absolute;
 }
 .bottom {
     display: flex;
@@ -193,5 +200,7 @@ header h1 {
     top: 25vh;
 
 }
+
+
 
 
