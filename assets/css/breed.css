@@ -3,12 +3,30 @@ body {
 }
 
 header {
-    margin-bottom: 75px;
+    /* margin-bottom: 75px;
     background-color: #bab0a4;
     margin-top: 0;
     padding: 1px;
     padding-bottom: 20px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid black; */
+    display: flex;
+    text-align: center;
+    background-color: #bab0a4;
+    color: black;
+    border-bottom: 7px solid black;
+    border-top: 7px solid black;
+    align-items: center;
+    justify-content: space-between;
+    height: 162px;
+    margin-bottom: 100px;
+    align-content: center;
+}
+
+header h1 {
+    /* margin: 0 auto; */
+    position: relative;
+    left: -600px;
+
 }
 .bottom {
     display: flex;
