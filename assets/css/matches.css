@@ -70,9 +70,9 @@ p {
 }
 
 .breedSelection {
-    padding-left: 270px;
+    padding-left: 100px;
     padding-top: 25px;
-    text-align: center;
+    text-align: left;
     font-size: 30px;
     font-family: "Chicle", serif;
     font-weight: 400;
