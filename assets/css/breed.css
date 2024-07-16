@@ -105,6 +105,7 @@ header img {
     border-radius: 5px;
     text-align: center;
     height: 50px;
+    margin-right: 10px;
     /* margin-right: 20px; */
 
 
@@ -202,5 +203,73 @@ header img {
 }
 
 
+@media (max-width: 1110px) {
 
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
 
+    header img {
+        position: relative;
+        width: 250px;
+        margin-bottom: 20px;
+    }
+    .dog img {
+        width: 0px;
+        margin: 0;
+    }
+
+    .bottom {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+}
+
+@media (max-width: 880px) {
+    form {
+       display: flex;
+       flex-direction: column;
+    }
+    .form {
+        height: 100%;
+        margin: 20px 0px 0px 0px;
+        border: 0;
+    }
+
+    .form button {
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .form .input-field {
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 550px) {
+    header {
+        width: 550px;
+    }
+
+    .bottom {
+        /* margin-right: 80px; */
+        display: flex;
+        /* flex-direction: column-reverse; */
+    }
+    
+}
+
+/* @media (max-width: 320px) {
+    header {
+        width: 515px;
+    }
+
+    .bottom {
+        margin-right: 200px ;
+    }
+} */
