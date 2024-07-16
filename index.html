@@ -10,15 +10,15 @@
     <title>Find Your Fur Baby Home Page</title>
 </head>
 <body>
-    <header >
-        <img src="assets/images/pawsitive-connections-high-resol.png" alt="brand logo" class="logo1">
+    <header>
+        <img src="assets/images/pawsitive-connections-high-resol2.png" alt="brand logo" class="logo1">
         <h1>Find your fur baby!</h1>  
     </header>
 
     </section >
     <!-- <div class="container"> -->
         <section class="quiz row">
-            <div class="col l4">
+            <div class="col l4 fun-fact-info">
                 <div class="img">
                     <img id="random-dog-image" src="./assets/test-images/coco.jpg" alt="Random Dog Image">
                 </div>
@@ -30,100 +30,49 @@
                     </p>
                 </div>
             </div>
-            <div id="good_with_children" class="col l8 question card-panel center">
-                <h5>Would you like a dog that is good with children?</h5>
-                <div class="answers">
-                    <p class="low">1 = least trainable with kids</p>
-                    <p class="center">3 = somewhat trainable with kids</p>
-                    <p class="high">5 = most trainable with kids</p>
-                </div>
-                <div class="quiz-btns col l12 center ">
-                    <div class="btn quizBtn" data-question="good_with_children" data-answer="1"></div>
-                    <div class="btn quizBtn" data-question="good_with_children" data-answer="2"></div>
-                    <div class="btn quizBtn" data-question="good_with_children" data-answer="3"></div>
-                    <div class="btn quizBtn" data-question="good_with_children" data-answer="4"></div>
-                    <div class="btn quizBtn" data-question="good_with_children" data-answer="5"></div>
-                </div>
-                <div class="labels">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                </div>
-                
-                <div class="next-prev">
-                <button id="q1-next" class="btn waves-effect waves-light next fetch-fact-and-image" type="button" name="action">Next
-                    <span class="material-icons">pets</span>
-                </button>
-                </div>
-            </div>
-           
-            <div id="good_with_other_dogs" class="col s8 question card-panel center hide">
-                <h5>Would you like your dog to be good with other pets?</h5>
-                <div class="answers">
-                    <p class="low">1 = not good with other pets</p>
-                    <p class="center">3 = decent with other pets</p>
-                    <p class="high">5 = great with other pets</p>
-                </div>
-                <div class="quiz-btns col l12 center ">
-                    <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="1"></div>
-                    <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="2"></div>
-                    <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="3"></div>
-                    <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="4"></div>
-                    <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="5"></div>
-                </div>
-                <div class="labels">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                </div>
-                <div class="next-prev">
-                <button id="q2-prev" class="btn waves-effect waves-light btn-small prev fetch-fact-and-image" type="button">Previous</button>
-                <button id="q2-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
-                </div>
-            </div>
-            <div id="shedding" class="col s8 question card-panel center hide">
-                <h5>Do you mind if they shed?</h5>
-                <div class="answers">
-                    <p class="low">1 = least amount of shedding possible</p>
-                    <p class="center">3 = some shedding is ok</p>
-                    <p class="high">5 = max amount of shedding possible</p>
-                </div>
-                <div class="quiz-btns col l12 center ">
-                    <div class="btn quizBtn" data-question="shedding" data-answer="1"></div>
-                    <div class="btn quizBtn" data-question="shedding" data-answer="2"></div>
-                    <div class="btn quizBtn" data-question="shedding" data-answer="3"></div>
-                    <div class="btn quizBtn" data-question="shedding" data-answer="4"></div>
-                    <div class="btn quizBtn" data-question="shedding" data-answer="5"></div>
-                </div>
-                <div class="labels">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                </div>
-                <div class="next-prev">
-                <button id="q3-prev" class="btn waves-effect waves-light btn-small prev fetch-fact-and-image" type="button">Previous</button>
-                <button id="q3-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
-                </div>
-            </div>
-            <div id="trainability" class="col s8 question card-panel center hide">
-                    <h5>Would like a dog that is easily trainable?</h5>
+            <!-- <div id="quizzes"> -->
+                <div id="good_with_children" class="col s11 l8 question card-panel center">
+                    <h5>Would you like a dog that is good with children?</h5>
                     <div class="answers">
-                        <p class="low">1 = hardest to train</p>
-                        <p class="center">3 = medium amount of trainability</p>
-                        <p class="high">5 = easiest to train</p>
+                        <p class="low">1 = least trainable with kids</p>
+                        <p class="center">3 = somewhat trainable with kids</p>
+                        <p class="high">5 = most trainable with kids</p>
                     </div>
                     <div class="quiz-btns col l12 center ">
-                        <div class="btn quizBtn" data-question="trainability" data-answer="1"></div>
-                        <div class="btn quizBtn" data-question="trainability" data-answer="2"></div>
-                        <div class="btn quizBtn" data-question="trainability" data-answer="3"></div>
-                        <div class="btn quizBtn" data-question="trainability" data-answer="4"></div>
-                        <div class="btn quizBtn" data-question="trainability" data-answer="5"></div>
+                        <div class="btn quizBtn" data-question="good_with_children" data-answer="1"></div>
+                        <div class="btn quizBtn" data-question="good_with_children" data-answer="2"></div>
+                        <div class="btn quizBtn" data-question="good_with_children" data-answer="3"></div>
+                        <div class="btn quizBtn" data-question="good_with_children" data-answer="4"></div>
+                        <div class="btn quizBtn" data-question="good_with_children" data-answer="5"></div>
+                    </div>
+                    <div class="labels">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                    
+                    <div class="next-prev">
+                    <button id="q1-next" class="btn waves-effect waves-light next fetch-fact-and-image" type="button" name="action">Next
+                        <span class="material-icons">pets</span>
+                    </button>
+                    </div>
+                </div>
+            
+                <div id="good_with_other_dogs" class="col s11 l8 question card-panel center hide">
+                    <h5>Would you like your dog to be good with other pets?</h5>
+                    <div class="answers">
+                        <p class="low">1 = not good with other pets</p>
+                        <p class="center">3 = decent with other pets</p>
+                        <p class="high">5 = great with other pets</p>
+                    </div>
+                    <div class="quiz-btns col l12 center ">
+                        <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="1"></div>
+                        <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="2"></div>
+                        <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="3"></div>
+                        <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="4"></div>
+                        <div class="btn quizBtn" data-question="good_with_other_dogs" data-answer="5"></div>
                     </div>
                     <div class="labels">
                         <span>1</span>
@@ -133,11 +82,63 @@
                         <span>5</span>
                     </div>
                     <div class="next-prev">
-                    <button id="q4-prev" class="btn waves-effect waves-light btn-small prev fetch-fact-and-image" type="button">Previous</button>
-                    <button id="q4-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
+                    <button id="q2-prev" class="btn waves-effect waves-light btn-small prev fetch-fact-and-image" type="button">Previous</button>
+                    <button id="q2-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
                     </div>
                 </div>
-                <div id="energy" class="col s8 question card-panel center hide">
+                <div id="shedding" class="col l8 s11 question card-panel center hide">
+                    <h5>Do you mind if they shed?</h5>
+                    <div class="answers">
+                        <p class="low">1 = least amount of shedding possible</p>
+                        <p class="center">3 = some shedding is ok</p>
+                        <p class="high">5 = max amount of shedding possible</p>
+                    </div>
+                    <div class="quiz-btns col l12 center ">
+                        <div class="btn quizBtn" data-question="shedding" data-answer="1"></div>
+                        <div class="btn quizBtn" data-question="shedding" data-answer="2"></div>
+                        <div class="btn quizBtn" data-question="shedding" data-answer="3"></div>
+                        <div class="btn quizBtn" data-question="shedding" data-answer="4"></div>
+                        <div class="btn quizBtn" data-question="shedding" data-answer="5"></div>
+                    </div>
+                    <div class="labels">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                    <div class="next-prev">
+                    <button id="q3-prev" class="btn waves-effect waves-light btn-small prev fetch-fact-and-image" type="button">Previous</button>
+                    <button id="q3-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
+                    </div>
+                </div>
+                <div id="trainability" class="col l8 s11 question card-panel center hide">
+                        <h5>Would like a dog that is easily trainable?</h5>
+                        <div class="answers">
+                            <p class="low">1 = hardest to train</p>
+                            <p class="center">3 = medium amount of trainability</p>
+                            <p class="high">5 = easiest to train</p>
+                        </div>
+                        <div class="quiz-btns col l12 center ">
+                            <div class="btn quizBtn" data-question="trainability" data-answer="1"></div>
+                            <div class="btn quizBtn" data-question="trainability" data-answer="2"></div>
+                            <div class="btn quizBtn" data-question="trainability" data-answer="3"></div>
+                            <div class="btn quizBtn" data-question="trainability" data-answer="4"></div>
+                            <div class="btn quizBtn" data-question="trainability" data-answer="5"></div>
+                        </div>
+                        <div class="labels">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                        </div>
+                        <div class="next-prev">
+                        <button id="q4-prev" class="btn waves-effect waves-light btn-small prev fetch-fact-and-image" type="button">Previous</button>
+                        <button id="q4-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
+                        </div>
+                </div>
+                <div id="energy" class="col s11 l8 question card-panel center hide">
                     <h5>Would you like a dog that is high energy?</h5>
                     <div class="answers">
                         <p class="low">1 = lowest energy possible</p>
@@ -163,7 +164,7 @@
                     <button id="q5-next" class="btn waves-effect waves-light btn-small next fetch-fact-and-image" type="button">Next</button>
                     </div>
                 </div>
-                <div id="barking" class="col s8 question card-panel center hide">
+                <div id="barking" class="col s11 l8 question card-panel center hide">
                     <h5>Do you want a dog who likes to bark?</h5>
                     <div class="answers">
                         <p class="low">1 = least amount of barkiness possible</p>
@@ -189,6 +190,7 @@
                     <button id="submit" class="btn waves-effect waves-light btn-small next" type="button">Submit</button>
                     </div>
                 </div>
+            <!-- </div> -->
         
         </section>
     </div>

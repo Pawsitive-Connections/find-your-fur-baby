@@ -3,12 +3,37 @@ body {
 }
 
 header {
-    margin-bottom: 75px;
+    /* margin-bottom: 75px;
     background-color: #bab0a4;
     margin-top: 0;
     padding: 1px;
     padding-bottom: 20px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid black; */
+    display: flex;
+    text-align: center;
+    background-color: #bab0a4;
+    color: black;
+    border-bottom: 7px solid black;
+    border-top: 7px solid black;
+    align-items: center;
+    justify-content: space-between;
+    height: 162px;
+    margin-bottom: 100px;
+    align-content: center;
+    /* background-color: #bab0a4;
+    display: flex; */
+}
+
+header h1 {
+    /* margin: 0 auto;
+    position: relative;
+    left: -600px; */
+    margin: 0 auto;
+
+}
+
+header img {
+    position: absolute;
 }
 .bottom {
     display: flex;
@@ -80,6 +105,7 @@ header {
     border-radius: 5px;
     text-align: center;
     height: 50px;
+    margin-right: 10px;
     /* margin-right: 20px; */
 
 
@@ -153,3 +179,97 @@ header {
     
 }
 
+#new-loc:hover {
+    background-color: #ecd3d3;
+}
+
+.footerLogo {
+    /* display: flex;
+    align-content: center;
+    justify-content: center; */
+
+   
+}
+
+.footerLogo img {
+    /* margin: 0 auto; */
+    height: 120px;
+    width: auto;
+    /* margin-top: 100px; */
+    position: relative;
+    left: 50%;
+    top: 25vh;
+
+}
+
+
+@media (max-width: 1110px) {
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    header img {
+        position: relative;
+        width: 250px;
+        margin-bottom: 20px;
+    }
+    .dog img {
+        width: 0px;
+        margin: 0;
+    }
+
+    .bottom {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+}
+
+@media (max-width: 880px) {
+    form {
+       display: flex;
+       flex-direction: column;
+    }
+    .form {
+        height: 100%;
+        margin: 20px 0px 0px 0px;
+        border: 0;
+    }
+
+    .form button {
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .form .input-field {
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 550px) {
+    header {
+        width: 550px;
+    }
+
+    .bottom {
+        /* margin-right: 80px; */
+        display: flex;
+        /* flex-direction: column-reverse; */
+    }
+    
+}
+
+/* @media (max-width: 320px) {
+    header {
+        width: 515px;
+    }
+
+    .bottom {
+        margin-right: 200px ;
+    }
+} */
