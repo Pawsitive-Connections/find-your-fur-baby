@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const score = data[0][attribute];
                     const sentence = sentences[attribute][score];
                     const attributeEle = document.createElement('p');
-                    attributeEle.textContent = sentence;
+                    attributeEle.innerHTML = `<i class="material-icons tiny">pets</i> ${sentence}`;
                     container.appendChild(attributeEle);
                 })
                 
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     selectedBreeds.forEach((breed, index) => {
         const imageContainerId = `image${index + 1}`;
-        
+
         fetchDataAndAppend(breed, apiKey, imageContainerId);
     });
 

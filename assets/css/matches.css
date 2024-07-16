@@ -15,6 +15,7 @@ section {
     height: max-content;
     margin: 0;
     padding: 0;
+    border-radius: 10px;
 }
 
 header {
@@ -33,12 +34,12 @@ h1 {
     align-content: center;
     justify-content: center;
     text-align: center;
-    font-size: 35px;
     font-family: "Chicle", serif;
     font-weight: 400;
     font-style: normal;
     padding-bottom: 30px;
     background-color: #bab0a4;
+    border-radius: 10px;
 }
 
 .breed, .details, .findFurBaby {
@@ -48,6 +49,7 @@ h1 {
 .appended-image1, .appended-image2, .appended-image3 {
     height: 400px;
     width: 400px;
+    border-radius: 10px;
 }
 p {
     flex: 1;
@@ -62,6 +64,7 @@ p {
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
+    border-radius: 10px;
 }
 
 
@@ -70,20 +73,22 @@ p {
 }
 
 .breedSelection {
-    padding-left: 270px;
+    padding-left: 100px;
     padding-top: 25px;
-    text-align: center;
+    text-align: left;
     font-size: 30px;
     font-family: "Chicle", serif;
     font-weight: 400;
     font-style: normal;
     background-color: #bab0a4;
     width: max-content;
+    border-radius: 10px;
 }
 
 divDescription {
     background-color: #bab0a4;
     width: 840px;
+    border-radius: 10px;
 }
 
 .image1-photos, .image2-photos, .image3-photos {
@@ -94,6 +99,24 @@ divDescription {
 #image1, #image2, #image3 {
     padding: 20px;
     
+}
+ 
+
+.logo1 {
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: start;
+}
+
+.footerLogo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn.wave-effect.wave-light {
+    border-radius: 10px;
+
 }
 
 @media (max-width: 768px) {
