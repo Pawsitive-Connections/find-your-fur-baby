@@ -10,6 +10,18 @@
     font-style: normal;
   }
   
+  header {
+    display: flex;
+    text-align: center;
+    background-color: #bab0a4;
+    color: black;
+    border-bottom: 7px solid black;
+    border-top: 7px solid black;
+    align-items: center;
+    justify-content: space-between;
+    height: 162px;
+  }
+  
 section {
     background-color: #ecd3d3;
     height: max-content;
@@ -18,23 +30,20 @@ section {
     border-radius: 10px;
 }
 
-header {
-    text-align: center;
-    background-color: #bab0a4;
-    color: black;
-    border-bottom: 7px solid black;
-    border-top: 7px solid black;
-}
 i.material-icons {
     background-color: #dbddec;
     padding-top: 20px;
 }
 h1 {
+<<<<<<< HEAD
+    font-family: "Chicle", serif;
+=======
     display: flex;
     align-content: center;
     justify-content: center;
     text-align: center;
     /* font-family: "Chicle", serif; */
+>>>>>>> 5274d176d66ffba0d4a2c56b7b73fe03a8e5d1bc
     font-weight: 400;
     font-style: normal;
     padding-bottom: 30px;
@@ -52,6 +61,19 @@ h1 {
     border-radius: 10px 0px 0px 10px;
 
 }
+
+.headerText {
+    background-color: #bab0a4;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Chicle", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    
+}
+
 p {
     flex: 1;
     background-color: #dbddec;
@@ -109,9 +131,11 @@ divDescription {
  
 
 .logo1 {
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: start;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    height: 100px;
+    width: 300px;
 }
 
 .footerLogo {
