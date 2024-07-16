@@ -166,16 +166,22 @@ img {
    
 }
 
-.fun-fact-container .fun-fact span {
-    font-size: 30px;
-    font-weight: bold;
- 
+.fun-fact-container h5 {
+   background-color: #dbddec;
+   width: 250px;
+   padding: 20px;
+   padding-bottom: 0;
+   margin-bottom: 0;
+   border: 5px solid #bab0a4;
+    border-bottom: 0;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .fun-fact-container .fun-fact {
     border: 5px solid #bab0a4;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     font-size: 18px;
+    border-top: 0;
 }
 
 
