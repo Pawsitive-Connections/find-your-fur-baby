@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            
+                // this function displays the descriptions for the three best matches
             if (data && data.length >= 1 && data[0].image_link && data[0].image_link.length > 0) {
                 const imageContainer = document.getElementById(imageContainerId);
                 const imgElement = document.createElement('img');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nameDiv.classList.add('breedSelection');
                 container.appendChild(nameDiv);
                 
-                
+                //These change the number results to sentences for more accurate responses
                 const sentences = {
                     good_with_children: {
                         1: 'This breed is not good with children.',
@@ -74,14 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
                 const attributes = ['good_with_children', 'good_with_other_dogs', 'shedding', 'trainability', 'energy', 'barking'];
-                
+                //this displays an icon before our responses
                 attributes.forEach(attribute => {
                     const score = data[0][attribute];
                     const sentence = sentences[attribute][score];
                     const attributeEle = document.createElement('p');
                     attributeEle.innerHTML = `<i class="material-icons tiny">pets</i> ${sentence}`;
                     container.appendChild(attributeEle);
-                    // attributeEle.setAttribute('style', 'background-color: black;')
+                // attributeEle.setAttribute('style', 'background-color: black;')
                 
                 })
                 
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const selectedBreeds = JSON.parse(localStorage.getItem('selectedBreeds')) || [];
-
+                //displays our image in our 3 image containers
     selectedBreeds.forEach((breed, index) => {
         const imageContainerId = `image${index + 1}`;
 
