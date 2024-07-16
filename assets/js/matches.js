@@ -91,7 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // btnDiv.classList.add('btn-container')
                 button.textContent = `Find your very own ${data[0].name}!`;
                 button.classList.add('btn', 'wave-effect', 'wave-light');
-                button.setAttribute('style', '   background-color: #dbddec; color: #000; border: 5px solid #bab0a4; border-radius: 5px; text-align: center;height: 50px;' )
+                button.setAttribute('style', '   background-color: #dbddec; color: #000; border: 5px solid #bab0a4; border-radius: 5px; text-align: center;height: auto;' )
+                button.addEventListener('mouseover', function () {
+                    button.setAttribute('style', 'background-color: #ecd3d3; color: #000; border: 5px solid #bab0a4; border-radius: 5px; text-align: center;height: auto;')
+                })
+                button.addEventListener('mouseout', function () {
+                    button.setAttribute('style', 'background-color: #dbddec; color: #000; border: 5px solid #bab0a4; border-radius: 5px; text-align: center;height: auto;')
+
+                })
                 button.addEventListener('click', () => {
                     localStorage.setItem('selectedBreed', data[0].name);
                     window.location.href = 'breed.html';
