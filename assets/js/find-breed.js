@@ -311,7 +311,7 @@ function aboutDog (pickADog) {
       let imgUrl = dog.children[0].currentSrc
       console.log(imgUrl)
     img.setAttribute('src', imgUrl)
-    img.setAttribute('style', 'width: 200px; height: auto;')
+    img.setAttribute('style', 'width: 200px; height: auto; border-radius: 5px;')
 
     let dogName = dog.lastChild.childNodes[0].innerText
     aboutText.textContent = `More about ${dogName}`;
