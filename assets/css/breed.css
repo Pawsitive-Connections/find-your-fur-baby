@@ -37,10 +37,13 @@ header {
 
 .dog {
     display: flex;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 .dog img {
-    margin: 0px 35px 20px 0px;
+    margin: 0px 35px 0px 0px;
+    border-radius: 5px;
 }
 
 .name {
@@ -125,7 +128,7 @@ header {
     cursor: pointer;
     /* border: 5px solid #bab0a4;
     border-radius: 10px; */
-    height: 200px;
+    background-color: #ecd3d3;
   }
 
 

@@ -36,6 +36,11 @@ i.material-icons {
 }
 h1 {
     font-family: "Chicle", serif;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
     padding-bottom: 30px;
