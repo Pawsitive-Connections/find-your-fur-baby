@@ -143,10 +143,12 @@ divDescription {
 
 .btn {
     position: relative;
-    left: -64%;
-    top: -50px;
+    left: -66%;
+    top: -40px;
+    width: 300px;
 
 }
+
 
 
 @media (max-width: 768px) {
