@@ -12,10 +12,11 @@ const mile = document.getElementById('miles')
 
 const h2 = document.getElementById('breedH2')
 
+
 let breed = localStorage.getItem('selectedBreed');
 // h2.textContent = `Find my ${breed}!`;
 
-
+submit.textContent = `Find ${breed} neare me`
 submit.addEventListener('click', function (event){
     event.preventDefault();
     anywhere.setAttribute('style', 'background-color: #dbddec;')
@@ -175,7 +176,7 @@ function createLinks (dogs) {
 
         li1.textContent = dog.attributes.name
         li1.classList.add('name')
-        li2.textContent = dog.attributes.breedPrimary
+        li2.textContent = dog.attributes.breedString
         li3.textContent = dog.attributes.ageString
         li4.textContent = dog.attributes.colorDetails
         li5.textContent = dog.attributes.sex
@@ -299,13 +300,19 @@ function aboutDog (pickADog) {
   // console.log(description)
   const aboutText = document.getElementById('aboutBreed')
   const pText = document.getElementById('description')
+  const img = document.getElementById('dog-img')
   for (const dog of pickADog) {
     dog.addEventListener('click', function (event) {
       // event.preventDefault()
       // console.log(dogData)
-    document.getElementById('dHeader').classList.remove('hide')
+      document.getElementById('dHeader').classList.remove('hide')
+      
+      // console.log(dog)
+      let imgUrl = dog.children[0].currentSrc
+      console.log(imgUrl)
+    img.setAttribute('src', imgUrl)
+    img.setAttribute('style', 'width: 200px; height: auto; border-radius: 5px;')
 
-    // console.log(dog)
     let dogName = dog.lastChild.childNodes[0].innerText
     aboutText.textContent = `More about ${dogName}`;
     let description = dog.children[1].innerText;
@@ -326,3 +333,23 @@ function aboutDog (pickADog) {
 $(document).ready(function(){
     $('select').formSelect();
   });
+
+
+  const newLoc = document.getElementById('new-loc') 
+
+
+  newLoc.addEventListener('click', function () {
+    location.reload()
+    
+  })
+
+
+   $(document).ready(function(){
+     $('.modal').modal();
+     $('#modal1').modal('open');
+
+   });
+
+  
+ 
+         

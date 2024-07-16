@@ -34,8 +34,8 @@ $(document).ready(() => {
 
     showQuestion(0);
 
-        /* Takes the questions and answers and puts then in the answer object when the 
-        answer buttons are selected.  */
+    /* Takes the questions and answers and puts then in the answer object when the 
+    answer buttons are selected.  */
 
     $('.quizBtn').click(function() {
         const question = $(this).data('question');
@@ -69,10 +69,10 @@ $(document).ready(() => {
             method: 'GET',
             success: function(response) {
                 const imageUrl = response.message;
-                $('img').attr('src', imageUrl);
+                $('#random-dog-image').attr('src', imageUrl);
             },
             error: function() {
-                $('img').attr('src', './assets/test-images/coco.jpg');
+                $('#random-dog-image').attr('src', './assets/test-images/coco.jpg');
             }
         });
     }

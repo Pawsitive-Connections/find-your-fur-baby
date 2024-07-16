@@ -5,9 +5,21 @@
 }
 
 .chicle-regular {
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
+  }
+  
+  header {
+    display: flex;
+    text-align: center;
+    background-color: #bab0a4;
+    color: black;
+    border-bottom: 7px solid black;
+    border-top: 7px solid black;
+    align-items: center;
+    justify-content: space-between;
+    height: 162px;
   }
   
 section {
@@ -15,30 +27,25 @@ section {
     height: max-content;
     margin: 0;
     padding: 0;
+    border-radius: 10px;
 }
 
-header {
-    text-align: center;
-    background-color: #bab0a4;
-    color: black;
-    border-bottom: 7px solid black;
-    border-top: 7px solid black;
-}
 i.material-icons {
-    background-color: #bab0a4;
+    background-color: #dbddec;
     padding-top: 20px;
 }
 h1 {
+    font-family: "Chicle", serif;
     display: flex;
     align-content: center;
     justify-content: center;
     text-align: center;
-    font-size: 35px;
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
     padding-bottom: 30px;
     background-color: #bab0a4;
+    border-radius: 10px;
 }
 
 .breed, .details, .findFurBaby {
@@ -48,20 +55,37 @@ h1 {
 .appended-image1, .appended-image2, .appended-image3 {
     height: 400px;
     width: 400px;
+    border-radius: 10px 0px 0px 10px;
+
 }
+
+.headerText {
+    background-color: #bab0a4;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Chicle", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    
+}
+
 p {
     flex: 1;
-    background-color: #bab0a4;
+    background-color: #dbddec;
     padding: 10px;
     padding-left: 100px;
     flex-direction: column;
     justify-content: left;
     align-items: left;
     text-align: left;
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
+    border-radius: 10px;
+    
 }
 
 
@@ -70,31 +94,60 @@ p {
 }
 
 .breedSelection {
-    padding-left: 270px;
+    padding-left: 100px;
     padding-top: 25px;
-    text-align: center;
+    text-align: left;
     font-size: 30px;
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
-    background-color: #bab0a4;
+    background-color: #dbddec;
     width: max-content;
+    border-radius: 10px;
 }
 
 divDescription {
-    background-color: #bab0a4;
+    background-color: #dbddec;
     width: 840px;
+    border-radius: 0px 10px 10px 10px;
+    border: 5px solid #bab0a4;
+    /* border-left: 0; */
+
 }
 
 .image1-photos, .image2-photos, .image3-photos {
-    background-color: #bab0a4;
+    background-color: #dbddec;
     justify-content: space-evenly;
+    
 }
 
 #image1, #image2, #image3 {
     padding: 20px;
     
 }
+ 
+
+.logo1 {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    height: 100px;
+    width: 300px;
+}
+
+.footerLogo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn {
+    position: relative;
+    left: -64%;
+    top: -50px;
+
+}
+
 
 @media (max-width: 768px) {
     #image1, #image2, #image3 {

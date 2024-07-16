@@ -13,27 +13,35 @@
     </header>
 
     <section class="top">
-        <div class="form center">
-            <form class="row">
-                    <div class="input-field col l2">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Zip Code</label>
-                    </div>
-                    <div class="input-field col l3">
-                        <select id="miles">
-                            <option value="" disabled selected>miles within radius</option>
-                            <option value="10">10 Miles</option>
-                            <option value="30">30 Miles</option>
-                            <option value="50">50 Miles</option>
-                            <option value="100">100 Miles</option>
-                            <option value="100">300 Miles</option>
-                            <option value="100">500 Miles</option>
-                        </select>
-                    </div>
-                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Find [breed] near me!</button>
-                    <button class="btn waves-effect waves-light" type="anywhere" id="anywhere" name="action">Anywhere</button>
-            </form>
-        </div>
+        <a class="waves-effect waves-light btn" id="new-loc" href="#modal1">Search New Location</a>
+        <!-- <div id="modal1" class="modal"> -->
+            <div id="modal1" class="modal">
+                <div class="form center modal-content">
+                    <form class="row">
+                            <div class="input-field col l2">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Zip Code</label>
+                            </div>
+                            <div class="input-field col l3">
+                                <select id="miles">
+                                    <option value="" disabled selected>miles within radius</option>
+                                    <option value="10">10 Miles</option>
+                                    <option value="30">30 Miles</option>
+                                    <option value="50">50 Miles</option>
+                                    <option value="100">100 Miles</option>
+                                    <option value="100">300 Miles</option>
+                                    <option value="100">500 Miles</option>
+                                </select>
+                            </div>
+                            <button class="btn waves-effect waves-light modal-close" type="submit" id="submit" name="action">Find [breed] near me!</button>
+                            <button class="btn waves-effect waves-light modal-close" type="anywhere" id="anywhere" name="action">Anywhere</button>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-light btn-flat">Search Location</a>
+                </div> -->
+            </div>
+        <!-- </div> -->
 
     </section>
     <section class="bottom row">
@@ -46,20 +54,14 @@
     <div class="about col l5">
         <h4 id="aboutBreed"></h4>
         <div class="info">
+            <img id="dog-img" >
             <p id="dHeader" class="hide"><strong>Description</strong></p>
            <p id="description" class="center"><strong>Click on a dog to see more info here!</strong></p>
-           <p id="mHeader" class="hide"><strong>Breeds mixed with</strong></p>
-           <p id="mix"></p>
-           <p id="cHeader" class="hide"><strong>Colors</strong></p>
-           <p id="clHeader" class="hide"><strong>Coat Length</strong></p>
-           <p id="coat"></p>
-           <ul id="colors"></ul>
         </div>
     </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/find-breed.js"></script>
-    <script src="assets/js/about-dog.js"></script>
 </body>
 </html>
