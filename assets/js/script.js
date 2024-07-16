@@ -69,10 +69,10 @@ $(document).ready(() => {
             method: 'GET',
             success: function(response) {
                 const imageUrl = response.message;
-                $('img').attr('src', imageUrl);
+                $('#random-dog-image').attr('src', imageUrl);
             },
             error: function() {
-                $('img').attr('src', './assets/test-images/coco.jpg');
+                $('#random-dog-image').attr('src', './assets/test-images/coco.jpg');
             }
         });
     }

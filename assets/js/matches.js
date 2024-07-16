@@ -81,15 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     const attributeEle = document.createElement('p');
                     attributeEle.innerHTML = `<i class="material-icons tiny">pets</i> ${sentence}`;
                     container.appendChild(attributeEle);
+                    // attributeEle.setAttribute('style', 'background-color: black;')
+                
                 })
                 
+                // const btnDiv = document.createElement('div')
                 const button = document.createElement('button');
+                // btnDiv.appendChild(button)
+                // btnDiv.classList.add('btn-container')
                 button.textContent = `Find your very own ${data[0].name}!`;
                 button.classList.add('btn', 'wave-effect', 'wave-light');
+                button.setAttribute('style', '   background-color: #dbddec; color: #000; border: 5px solid #bab0a4; border-radius: 5px; text-align: center;height: 50px;' )
                 button.addEventListener('click', () => {
                     localStorage.setItem('selectedBreed', data[0].name);
                     window.location.href = 'breed.html';
                 });
+                // const sects = document.getElementsByClassName('description')
+                // console.log(sects)
                 container.appendChild(button);
 
             } else {

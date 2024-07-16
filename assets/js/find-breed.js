@@ -12,10 +12,11 @@ const mile = document.getElementById('miles')
 
 const h2 = document.getElementById('breedH2')
 
+
 let breed = localStorage.getItem('selectedBreed');
 // h2.textContent = `Find my ${breed}!`;
 
-
+submit.textContent = `Find ${breed} neare me`
 submit.addEventListener('click', function (event){
     event.preventDefault();
     anywhere.setAttribute('style', 'background-color: #dbddec;')
@@ -326,3 +327,23 @@ function aboutDog (pickADog) {
 $(document).ready(function(){
     $('select').formSelect();
   });
+
+
+  const newLoc = document.getElementById('new-loc') 
+
+
+  newLoc.addEventListener('click', function () {
+    location.reload()
+    
+  })
+
+
+   $(document).ready(function(){
+     $('.modal').modal();
+     $('#modal1').modal('open');
+
+   });
+
+  
+ 
+         

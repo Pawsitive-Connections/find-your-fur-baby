@@ -5,7 +5,7 @@
 }
 
 .chicle-regular {
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
   }
@@ -31,11 +31,19 @@ section {
 }
 
 i.material-icons {
-    background-color: #bab0a4;
+    background-color: #dbddec;
     padding-top: 20px;
 }
 h1 {
+<<<<<<< HEAD
     font-family: "Chicle", serif;
+=======
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    /* font-family: "Chicle", serif; */
+>>>>>>> 5274d176d66ffba0d4a2c56b7b73fe03a8e5d1bc
     font-weight: 400;
     font-style: normal;
     padding-bottom: 30px;
@@ -50,7 +58,8 @@ h1 {
 .appended-image1, .appended-image2, .appended-image3 {
     height: 400px;
     width: 400px;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+
 }
 
 .headerText {
@@ -67,18 +76,19 @@ h1 {
 
 p {
     flex: 1;
-    background-color: #bab0a4;
+    background-color: #dbddec;
     padding: 10px;
     padding-left: 100px;
     flex-direction: column;
     justify-content: left;
     align-items: left;
     text-align: left;
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
     border-radius: 10px;
+    
 }
 
 
@@ -91,23 +101,27 @@ p {
     padding-top: 25px;
     text-align: left;
     font-size: 30px;
-    font-family: "Chicle", serif;
+    /* font-family: "Chicle", serif; */
     font-weight: 400;
     font-style: normal;
-    background-color: #bab0a4;
+    background-color: #dbddec;
     width: max-content;
     border-radius: 10px;
 }
 
 divDescription {
-    background-color: #bab0a4;
+    background-color: #dbddec;
     width: 840px;
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 10px;
+    border: 5px solid #bab0a4;
+    /* border-left: 0; */
+
 }
 
 .image1-photos, .image2-photos, .image3-photos {
-    background-color: #bab0a4;
+    background-color: #dbddec;
     justify-content: space-evenly;
+    
 }
 
 #image1, #image2, #image3 {
@@ -130,10 +144,13 @@ divDescription {
     justify-content: center;
 }
 
-.btn.wave-effect.wave-light {
-    border-radius: 10px;
+.btn {
+    position: relative;
+    left: -64%;
+    top: -50px;
 
 }
+
 
 @media (max-width: 768px) {
     #image1, #image2, #image3 {
