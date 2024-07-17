@@ -20,6 +20,8 @@ Pawsitive Connections - https://github.com/Pawsitive-Connections
 
 Patrick Hennessey - https://github.com/RickHennessey87
 
+Christine Matthews (Andreola) - https://github.com/cmatthews3212
+
 ## License
 
 MIT License
