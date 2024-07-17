@@ -20,6 +20,8 @@ Pawsitive Connections - https://github.com/Pawsitive-Connections
 
 Patrick Hennessey - https://github.com/RickHennessey87
 
+Chase Waldron - https://github.com/chasewaldron2400
+
 ## License
 
 MIT License
